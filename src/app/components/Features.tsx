@@ -1,9 +1,12 @@
 import { motion } from "motion/react";
 import { Filter, Calendar, Palette, Smartphone, Globe, RefreshCcw } from "lucide-react";
-import img4 from "../../assets/2.png";
-import img3 from "../../assets/3.png";
-import imgUntitled from "../../assets/4.png";
-import imgDddd from "../../assets/1.png";
+import { ThemedImage } from "../theme/ThemedImage";
+import {
+  QR_SWAP_IMAGES,
+  VISUAL_CONTROL_IMAGES,
+  CALENDAR_IMAGES,
+  CUSTOMIZATION_IMAGES,
+} from "../theme/featureImages";
 
 export function Features() {
   return (
@@ -34,7 +37,11 @@ export function Features() {
               </p>
             </div>
             <div className="relative h-64 md:h-96 mt-auto overflow-hidden">
-              <img src={imgDddd} alt="QR Swap Feature" className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" />
+              <ThemedImage
+                map={QR_SWAP_IMAGES}
+                alt="QR Swap Feature"
+                className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-surface-soft)] via-transparent to-transparent" />
             </div>
           </motion.div>
@@ -48,7 +55,13 @@ export function Features() {
               <p className="text-[var(--color-text-muted)]">Navega por equipos, ve tu progreso circular y marca estampas con un toque.</p>
             </div>
             <div className="relative h-48 mt-auto px-8 overflow-hidden">
-              <img src={img4} alt="Visual Control" className="w-full h-full object-cover object-top rounded-t-xl shadow-2xl group-hover:-translate-y-2 transition-transform duration-500" />
+              <div className="relative w-full h-full">
+                <ThemedImage
+                  map={VISUAL_CONTROL_IMAGES}
+                  alt="Visual Control"
+                  className="object-cover object-top rounded-t-xl shadow-2xl group-hover:-translate-y-2 transition-transform duration-500"
+                />
+              </div>
             </div>
           </motion.div>
 
@@ -68,8 +81,14 @@ export function Features() {
               <h3 className="text-xl font-bold text-[var(--color-text-strong)] mb-3">Calendario Oficial</h3>
               <p className="text-[var(--color-text-muted)]">Sigue el mundial. Horarios ajustados automáticamente a tu zona local.</p>
             </div>
-            <div className="relative flex-1 min-h-56 px-8 pt-2 overflow-hidden flex items-start justify-center">
-              <img src={img3} alt="Match Calendar" className="w-full h-full object-cover object-top rounded-t-xl shadow-2xl group-hover:-translate-y-2 transition-transform duration-500" />
+            <div className="relative flex-1 min-h-56 px-8 pt-2 overflow-hidden">
+              <div className="relative w-full h-full">
+                <ThemedImage
+                  map={CALENDAR_IMAGES}
+                  alt="Match Calendar"
+                  className="object-cover object-top rounded-t-xl shadow-2xl group-hover:-translate-y-2 transition-transform duration-500"
+                />
+              </div>
             </div>
           </motion.div>
 
@@ -84,7 +103,11 @@ export function Features() {
               </p>
             </div>
             <div className="relative w-full sm:w-1/2 h-64 sm:h-full overflow-hidden">
-              <img src={imgUntitled} alt="Customization" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <ThemedImage
+                map={CUSTOMIZATION_IMAGES}
+                alt="Customization"
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
+              />
               <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-surface-soft)] via-transparent to-transparent hidden sm:block" />
             </div>
           </motion.div>

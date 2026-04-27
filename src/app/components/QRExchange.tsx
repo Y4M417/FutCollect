@@ -1,27 +1,27 @@
 import { motion } from "motion/react";
 import { QrCode } from "lucide-react";
-import step1 from "../../assets/6.png";
-import step2 from "../../assets/7.png";
-import step3 from "../../assets/8.png";
+import { ThemedImage } from "../theme/ThemedImage";
+import type { ThemedImageMap } from "../theme/ThemedImage";
+import { STEP_1_IMAGES, STEP_2_IMAGES, STEP_3_IMAGES } from "../theme/qrStepImages";
 
-const STEPS = [
+const STEPS: { n: number; title: string; desc: string; imgMap: ThemedImageMap }[] = [
   {
     n: 1,
     title: "Genera tu QR",
     desc: "Abre FutCollect y entra a Intercambio QR. La app crea un código único con tus estampas repetidas y faltantes.",
-    img: step1,
+    imgMap: STEP_1_IMAGES,
   },
   {
     n: 2,
     title: "Escanea el de tu amigo",
     desc: "Apunta tu cámara al QR de la otra persona. La app cruza ambas colecciones al instante para encontrar coincidencias.",
-    img: step2,
+    imgMap: STEP_2_IMAGES,
   },
   {
     n: 3,
     title: "Intercambien y listo",
     desc: "Verás la lista exacta de estampas que pueden cambiar entre ustedes. Confirma el intercambio y se actualizan en sus álbumes.",
-    img: step3,
+    imgMap: STEP_3_IMAGES,
   },
 ];
 
@@ -58,12 +58,14 @@ export function QRExchange() {
                 <h3 className="text-xl font-bold text-[var(--color-text-strong)] mb-3">{s.title}</h3>
                 <p className="text-[var(--color-text-muted)] leading-relaxed">{s.desc}</p>
               </div>
-              <div className="relative h-64 px-8 pt-2 pb-8 overflow-hidden flex items-start justify-center">
-                <img
-                  src={s.img}
-                  alt={`Paso ${s.n}: ${s.title}`}
-                  className="w-full h-full object-contain object-top group-hover:-translate-y-1 transition-transform duration-500"
-                />
+              <div className="relative h-64 px-8 pt-2 pb-8 overflow-hidden">
+                <div className="relative w-full h-full">
+                  <ThemedImage
+                    map={s.imgMap}
+                    alt={`Paso ${s.n}: ${s.title}`}
+                    className="object-contain object-top group-hover:-translate-y-1 transition-transform duration-500"
+                  />
+                </div>
               </div>
             </motion.div>
           ))}

@@ -11,8 +11,26 @@ export function Hero() {
 
   return (
     <section id="top" className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand/20 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-bright/20 rounded-full blur-[120px] pointer-events-none" />
+      <motion.div
+        aria-hidden
+        className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand/20 rounded-full blur-[120px] pointer-events-none"
+        animate={{
+          x: [0, 40, -25, 0],
+          y: [0, -30, 35, 0],
+          scale: [1, 1.1, 0.95, 1],
+        }}
+        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        aria-hidden
+        className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-bright/20 rounded-full blur-[120px] pointer-events-none"
+        animate={{
+          x: [0, -35, 25, 0],
+          y: [0, 25, -30, 0],
+          scale: [1, 0.9, 1.15, 1],
+        }}
+        transition={{ duration: 16, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+      />
 
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
         <motion.div

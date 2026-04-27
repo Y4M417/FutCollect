@@ -5,7 +5,17 @@ import { GOOGLE_FORM_URL } from "../config";
 export function Waitlist() {
   return (
     <section className="py-24 relative overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-[400px] bg-gradient-to-r from-brand/20 to-brand-bright/20 blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl pointer-events-none">
+        <motion.div
+          aria-hidden
+          className="h-[400px] bg-gradient-to-r from-brand/20 to-brand-bright/20 blur-[100px] rounded-full"
+          animate={{
+            scale: [1, 1.15, 0.95, 1],
+            opacity: [0.7, 1, 0.85, 0.7],
+          }}
+          transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+        />
+      </div>
 
       <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
         <motion.div
