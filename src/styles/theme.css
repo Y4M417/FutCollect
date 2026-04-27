@@ -1,8 +1,92 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-brand: #007736;
+  --color-brand-dark: #004d23;
+  --color-brand-bright: #00a14b;
+  --color-brand-soft: #e6f4ec;
+  --color-brand-on-dark: #A7F3D0;
+  --color-brand-bg-mid: #081812;
+
+  --color-mx-green: var(--color-brand);
+  --color-mx-green-dark: var(--color-brand-dark);
+  --color-mx-green-bright: var(--color-brand-bright);
+  --color-mx-red: #E52521;
+  --color-mx-white: #FFFFFF;
+
+  --color-surface: #ffffff;
+  --color-surface-soft: #fafafa;
+  --color-surface-border: #e4e4e7;
+  --color-text-strong: #18181b;
+  --color-text-muted: #52525b;
+}
+
+[data-country="mexico"] {
+  --color-brand: #007736;
+  --color-brand-dark: #004d23;
+  --color-brand-bright: #00a14b;
+  --color-brand-soft: #e6f4ec;
+  --color-brand-on-dark: #A7F3D0;
+  --color-brand-bg-mid: #081812;
+}
+
+[data-country="usa"] {
+  --color-brand: #1F2A7A;
+  --color-brand-dark: #0f153d;
+  --color-brand-bright: #3A48A5;
+  --color-brand-soft: #e8eaf6;
+  --color-brand-on-dark: #BFDBFE;
+  --color-brand-bg-mid: #0a1224;
+}
+
+[data-country="canada"] {
+  --color-brand: #CE1126;
+  --color-brand-dark: #660913;
+  --color-brand-bright: #E61A32;
+  --color-brand-soft: #fce8ea;
+  --color-brand-on-dark: #FCA5A5;
+  --color-brand-bg-mid: #1a080a;
+}
+
+.theme-root {
+  --color-surface: #ffffff;
+  --color-surface-soft: #fafafa;
+  --color-surface-border: #e4e4e7;
+  --color-text-strong: #18181b;
+  --color-text-muted: #52525b;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--color-brand) 18%, white) 0%, #ffffff 60%, #ffffff 100%) fixed;
+}
+
+.theme-root.dark {
+  --color-surface: #0b0b0c;
+  --color-surface-soft: #131316;
+  --color-surface-border: #27272a;
+  --color-text-strong: #fafafa;
+  --color-text-muted: #a1a1aa;
+  background:
+    linear-gradient(180deg, var(--color-brand-dark) 0%, var(--color-brand-bg-mid) 35%, #000000 100%) fixed;
+}
+
+.theme-root,
+.theme-root *,
+.theme-root *::before,
+.theme-root *::after {
+  transition:
+    background-color 600ms ease,
+    background-image 600ms ease,
+    border-color 600ms ease,
+    color 400ms ease,
+    fill 400ms ease,
+    stroke 400ms ease,
+    box-shadow 600ms ease;
+}
+
 @layer base {
   body {
-    @apply bg-zinc-950 text-white;
+    @apply text-zinc-900;
     font-family: 'Plus Jakarta Sans', sans-serif;
   }
 }
