@@ -9,10 +9,16 @@ export function Features() {
   return (
     <section id="caracteristicas" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.8 }}
+          className="text-center max-w-2xl mx-auto mb-16"
+        >
           <h2 className="text-3xl md:text-5xl font-bold text-[var(--color-text-strong)] mb-6 tracking-tight">Todo lo que necesitas para completar tu álbum</h2>
           <p className="text-[var(--color-text-muted)] text-lg">Olvídate de las listas de papel. Usa nuestras herramientas para saber exactamente qué tienes, qué te falta y cómo conseguirlo más rápido.</p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 

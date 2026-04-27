@@ -29,14 +29,20 @@ export function QRExchange() {
   return (
     <section id="intercambio" className="py-20 md:py-24 relative">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-mx-red/10 border border-mx-red/30 mb-4">
-            <QrCode className="w-4 h-4 text-mx-red" />
-            <span className="text-xs font-semibold text-mx-red tracking-wide uppercase">Intercambio QR</span>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.8 }}
+          className="text-center max-w-2xl mx-auto mb-14"
+        >
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand/10 border border-brand/30 mb-4">
+            <QrCode className="w-4 h-4 text-brand" />
+            <span className="text-xs font-semibold text-brand-dark dark:text-brand-on-dark tracking-wide uppercase">Intercambio QR</span>
           </div>
           <h2 className="text-3xl md:text-5xl font-bold text-[var(--color-text-strong)] tracking-tight mb-4">Cambia estampas en 3 pasos</h2>
           <p className="text-[var(--color-text-muted)] text-lg">Olvídate de comparar listas a mano. La app hace el match por ti.</p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {STEPS.map((s) => (

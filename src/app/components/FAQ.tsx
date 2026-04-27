@@ -67,14 +67,20 @@ export function FAQ() {
   return (
     <section id="preguntas" className="py-20 md:py-24 relative">
       <div className="max-w-4xl mx-auto px-6">
-        <div className="text-center mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-12"
+        >
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand/10 border border-brand/30 mb-4">
             <HelpCircle className="w-4 h-4 text-brand" />
             <span className="text-xs font-semibold text-brand-dark dark:text-brand-on-dark tracking-wide uppercase">Preguntas frecuentes</span>
           </div>
           <h2 className="text-3xl md:text-5xl font-bold text-[var(--color-text-strong)] tracking-tight">¿Tienes dudas?</h2>
           <p className="mt-4 text-[var(--color-text-muted)] text-lg">Las preguntas que más nos hacen sobre FutCollect.</p>
-        </div>
+        </motion.div>
 
         <div className="flex flex-col gap-3">
           {FAQS.map((item, i) => (
