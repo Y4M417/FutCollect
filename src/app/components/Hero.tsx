@@ -1,9 +1,14 @@
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { ArrowRight, QrCode, Sparkles, Bell } from "lucide-react";
-import homeImg from "../../assets/placeholder.svg";
 import { GOOGLE_FORM_URL } from "../config";
+import { useTheme } from "../theme/ThemeContext";
+import { getHeroImage, getHeroImageKey } from "../theme/heroImages";
 
 export function Hero() {
+  const { country, mode } = useTheme();
+  const heroSrc = getHeroImage(country, mode);
+  const heroKey = getHeroImageKey(country, mode);
+
   return (
     <section id="top" className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand/20 rounded-full blur-[120px] pointer-events-none" />
@@ -61,11 +66,18 @@ export function Hero() {
           className="relative lg:ml-auto w-full max-w-md mx-auto"
         >
           <div className="relative rounded-[2.5rem] overflow-hidden border-[8px] border-[var(--color-surface-soft)] shadow-2xl shadow-brand/30 aspect-[9/19] bg-[var(--color-surface-soft)]">
-            <img
-              src={homeImg}
-              alt="FutCollect App Screenshot"
-              className="w-full h-full object-cover object-top"
-            />
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.img
+                key={heroKey}
+                src={heroSrc}
+                alt="FutCollect App Screenshot"
+                initial={{ opacity: 0, scale: 1.04 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.98 }}
+                transition={{ duration: 0.45, ease: "easeOut" }}
+                className="absolute inset-0 w-full h-full object-cover object-top"
+              />
+            </AnimatePresence>
           </div>
           <motion.div
             animate={{ y: [-10, 10, -10] }}

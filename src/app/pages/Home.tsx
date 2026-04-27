@@ -14,9 +14,9 @@ export function Home() {
         <Navbar />
         <main>
           <Hero />
-          <FAQ />
           <Features />
           <QRExchange />
+          <FAQ />
           <Waitlist />
         </main>
         <Footer />

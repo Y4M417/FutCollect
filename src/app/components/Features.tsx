@@ -62,7 +62,7 @@ export function Features() {
               <h3 className="text-xl font-bold text-[var(--color-text-strong)] mb-3">Calendario Oficial</h3>
               <p className="text-[var(--color-text-muted)]">Sigue el mundial. Horarios ajustados automáticamente a tu zona local.</p>
             </div>
-            <div className="relative h-48 mt-auto px-8 overflow-hidden">
+            <div className="relative flex-1 min-h-56 px-8 pt-2 overflow-hidden flex items-start justify-center">
               <img src={img3} alt="Match Calendar" className="w-full h-full object-cover object-top rounded-t-xl shadow-2xl group-hover:-translate-y-2 transition-transform duration-500" />
             </div>
           </motion.div>
