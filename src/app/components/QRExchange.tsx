@@ -63,7 +63,7 @@ export function QRExchange() {
                   <ThemedImage
                     map={s.imgMap}
                     alt={`Paso ${s.n}: ${s.title}`}
-                    className="object-contain object-top group-hover:-translate-y-1 transition-transform duration-500"
+                    className="object-contain group-hover:-translate-y-1 transition-transform duration-500"
                   />
                 </div>
               </div>
