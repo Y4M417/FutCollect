@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Filter, Calendar, Palette, Smartphone, Globe, RefreshCcw } from "lucide-react";
+import { Filter, Calendar, PieChart, Smartphone, Globe, RefreshCcw } from "lucide-react";
 import { ThemedImage } from "../theme/ThemedImage";
 import {
   QR_SWAP_IMAGES,
@@ -52,16 +52,14 @@ export function Features() {
                 <Smartphone className="w-6 h-6 text-brand-bright" />
               </div>
               <h3 className="text-xl font-bold text-[var(--color-text-strong)] mb-3">Control Visual</h3>
-              <p className="text-[var(--color-text-muted)]">Navega por equipos, ve tu progreso circular y marca estampas con un toque.</p>
+              <p className="text-[var(--color-text-muted)]">Navega por equipos, marca estampas con un toque y mantén un control de tu avance. Registrar tu progreso nunca ha sido tan fácil y profesional.</p>
             </div>
-            <div className="relative h-48 mt-auto px-8 overflow-hidden">
-              <div className="relative w-full h-full">
-                <ThemedImage
-                  map={VISUAL_CONTROL_IMAGES}
-                  alt="Visual Control"
-                  className="object-cover object-top rounded-t-xl shadow-2xl group-hover:-translate-y-2 transition-transform duration-500"
-                />
-              </div>
+            <div className="relative h-48 mt-auto overflow-hidden">
+              <ThemedImage
+                map={VISUAL_CONTROL_IMAGES}
+                alt="Visual Control"
+                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+              />
             </div>
           </motion.div>
 
@@ -81,32 +79,30 @@ export function Features() {
               <h3 className="text-xl font-bold text-[var(--color-text-strong)] mb-3">Calendario Oficial</h3>
               <p className="text-[var(--color-text-muted)]">Sigue el mundial. Horarios ajustados automáticamente a tu zona local.</p>
             </div>
-            <div className="relative flex-1 min-h-56 px-8 pt-2 overflow-hidden">
-              <div className="relative w-full h-full">
-                <ThemedImage
-                  map={CALENDAR_IMAGES}
-                  alt="Match Calendar"
-                  className="object-cover object-top rounded-t-xl shadow-2xl group-hover:-translate-y-2 transition-transform duration-500"
-                />
-              </div>
+            <div className="relative flex-1 min-h-56 mt-4 overflow-hidden">
+              <ThemedImage
+                map={CALENDAR_IMAGES}
+                alt="Match Calendar"
+                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+              />
             </div>
           </motion.div>
 
           <motion.div whileHover={{ y: -5 }} className="md:col-span-2 rounded-[2rem] bg-[var(--color-surface-soft)] border border-[var(--color-surface-border)] overflow-hidden group relative flex flex-col sm:flex-row items-center">
             <div className="p-8 md:p-12 z-10 flex-1">
               <div className="w-12 h-12 rounded-xl bg-mx-red/15 flex items-center justify-center mb-6">
-                <Palette className="w-6 h-6 text-mx-red" />
+                <PieChart className="w-6 h-6 text-mx-red" />
               </div>
-              <h3 className="text-2xl font-bold text-[var(--color-text-strong)] mb-3">Personalización Temática</h3>
+              <h3 className="text-2xl font-bold text-[var(--color-text-strong)] mb-3">Estadísticas Detalladas</h3>
               <p className="text-[var(--color-text-muted)]">
-                Elige los colores de tu país: México, USA o Canadá. Soporte en Español, Inglés y Portugués <Globe className="inline w-4 h-4 ml-1" />.
+                Consulta tu progreso general, mantén registro de tus estampas faltantes y repetidas, y obtén información precisa de cómo avanza tu colección en cada grupo del álbum mundialista.
               </p>
             </div>
             <div className="relative w-full sm:w-1/2 h-64 sm:h-full overflow-hidden">
               <ThemedImage
                 map={CUSTOMIZATION_IMAGES}
-                alt="Customization"
-                className="object-cover group-hover:scale-105 transition-transform duration-700"
+                alt="Estadísticas Detalladas"
+                className="w-full h-full object-cover object-left-top group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-surface-soft)] via-transparent to-transparent hidden sm:block" />
             </div>

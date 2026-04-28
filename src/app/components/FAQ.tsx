@@ -23,6 +23,10 @@ const FAQS: { q: string; a: string }[] = [
     q: "¿Cómo funciona el Intercambio por QR?",
     a: "Cada usuario tiene un QR personal con su lista de repetidas y faltantes. Al escanearse mutuamente, la app cruza ambas colecciones y te muestra exactamente qué estampas pueden cambiar entre ustedes. Más abajo en esta página verás los 3 pasos.",
   },
+  {
+    q: "¿Cómo registro una estampa?",
+    a: "¡Es muy fácil! En la sección de 'Mi Álbum', selecciona el equipo y simplemente toca el número de la estampa. Un toque para indicar que la tienes, dos toques si la tienes repetida. ¡Así de rápido y profesional!",
+  },
 ];
 
 function Item({ q, a, open, onToggle }: { q: string; a: string; open: boolean; onToggle: () => void }) {
