@@ -28,14 +28,12 @@ export function PhoneMockup({
       />
       {/* Phone frame */}
       <div className="phone-frame">
-        {/* Notch / Dynamic Island */}
+        {/* Dynamic Island */}
         <div className="phone-notch" />
         {/* Screen content */}
         <div className="phone-screen">
           {children}
         </div>
-        {/* Home indicator */}
-        <div className="phone-home-indicator" />
       </div>
     </div>
   );

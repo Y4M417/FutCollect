@@ -1,5 +1,5 @@
 import { MessageCircle, Camera, Globe } from "lucide-react";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo-niu.png";
 
 export function Footer() {
   return (

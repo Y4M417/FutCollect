@@ -1,34 +1,29 @@
 import type { ThemedImageMap } from "./ThemedImage";
 
 // =========================================================================
-// QR EXCHANGE — Paso 1: Genera tu QR  →  pantalla "qr"
-// NOTA: México oscuro usa `mex-dark-qr.png` (prefijo "mex-" en vez de "mx-").
+// QR EXCHANGE — Paso 1: Registra tus estampas  →  imagen única (sin tema)
 // =========================================================================
-import step1MxLight from "../../assets/mx-light-qr.png";
-import step1MxDark from "../../assets/mex-dark-qr.png";
-import step1UsLight from "../../assets/usa-light-qr.png";
-import step1UsDark from "../../assets/usa-dark-qr.png";
-import step1CaLight from "../../assets/cnd-light-qr.png";
-import step1CaDark from "../../assets/cnd-dark-qr.png";
+import step1Llenado from "../../assets/llenado-stamps.png";
 
 export const STEP_1_IMAGES: ThemedImageMap = {
-  "mexico-light": step1MxLight,
-  "mexico-dark": step1MxDark,
-  "usa-light": step1UsLight,
-  "usa-dark": step1UsDark,
-  "canada-light": step1CaLight,
-  "canada-dark": step1CaDark,
+  "mexico-light": step1Llenado,
+  "mexico-dark": step1Llenado,
+  "usa-light": step1Llenado,
+  "usa-dark": step1Llenado,
+  "canada-light": step1Llenado,
+  "canada-dark": step1Llenado,
 };
 
 // =========================================================================
-// QR EXCHANGE — Paso 2: Escanea el de tu amigo  →  pantalla "home"
+// QR EXCHANGE — Paso 2: Genera o escanea el QR  →  pantalla "qr"
+// NOTA: México oscuro usa `mex-dark-qr.png` (prefijo "mex-" en vez de "mx-").
 // =========================================================================
-import step2MxLight from "../../assets/mx-light-home.png";
-import step2MxDark from "../../assets/mx-dark-home.png";
-import step2UsLight from "../../assets/usa-light-home.png";
-import step2UsDark from "../../assets/usa-dark-home.png";
-import step2CaLight from "../../assets/cnd-light-home.png";
-import step2CaDark from "../../assets/cnd-dark-home.png";
+import step2MxLight from "../../assets/mx-light-qr.png";
+import step2MxDark from "../../assets/mex-dark-qr.png";
+import step2UsLight from "../../assets/usa-light-qr.png";
+import step2UsDark from "../../assets/usa-dark-qr.png";
+import step2CaLight from "../../assets/cnd-light-qr.png";
+import step2CaDark from "../../assets/cnd-dark-qr.png";
 
 export const STEP_2_IMAGES: ThemedImageMap = {
   "mexico-light": step2MxLight,
@@ -40,20 +35,17 @@ export const STEP_2_IMAGES: ThemedImageMap = {
 };
 
 // =========================================================================
-// QR EXCHANGE — Paso 3: Intercambien y listo  →  pantalla "album"
+// QR EXCHANGE — Paso 3: Intercambien y listo  →  pantalla "resultado"
+// Solo varía por modo (claro/oscuro), no por país.
 // =========================================================================
-import step3MxLight from "../../assets/mx-light-album.png";
-import step3MxDark from "../../assets/mx-dark-album.png";
-import step3UsLight from "../../assets/usa-light-album.png";
-import step3UsDark from "../../assets/usa-dark-album.png";
-import step3CaLight from "../../assets/cnd-light-album.png";
-import step3CaDark from "../../assets/cnd-light-album.png"; // TODO: Reemplazar con cnd-dark-album.png cuando esté disponible
+import step3Light from "../../assets/mex-light-resultado.jpg";
+import step3Dark from "../../assets/mex-dark-resultado.png";
 
 export const STEP_3_IMAGES: ThemedImageMap = {
-  "mexico-light": step3MxLight,
-  "mexico-dark": step3MxDark,
-  "usa-light": step3UsLight,
-  "usa-dark": step3UsDark,
-  "canada-light": step3CaLight,
-  "canada-dark": step3CaDark,
+  "mexico-light": step3Light,
+  "mexico-dark": step3Dark,
+  "usa-light": step3Light,
+  "usa-dark": step3Dark,
+  "canada-light": step3Light,
+  "canada-dark": step3Dark,
 };

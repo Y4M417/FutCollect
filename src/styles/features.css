@@ -43,13 +43,13 @@
 
 .phone-notch {
   position: absolute;
-  top: 14px;
+  top: 18px;
   left: 50%;
   transform: translateX(-50%);
-  width: 90px;
-  height: 24px;
+  width: 80px;
+  height: 22px;
   background: #000;
-  border-radius: 0 0 16px 16px;
+  border-radius: 50px;
   z-index: 10;
 }
 
@@ -68,17 +68,7 @@
   object-fit: cover;
 }
 
-.phone-home-indicator {
-  position: absolute;
-  bottom: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 4px;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 4px;
-  z-index: 10;
-}
+
 
 /* ═══════════════════════════════════════════════════════════════════════════
    BENTO FEATURE GRID — Linear / Raycast inspired
@@ -210,15 +200,18 @@
   }
 }
 
-/* Side card: spans 5 cols, stacked layout */
+/* Side card: spans 5 cols in bento, stacked layout */
 .feature-card--side {
   display: flex;
   flex-direction: column;
 }
 
 @media (min-width: 768px) {
-  .feature-card--side {
+  .features-bento .feature-card--side {
     grid-column: span 5;
+  }
+
+  .feature-card--side {
     min-height: 480px;
   }
 

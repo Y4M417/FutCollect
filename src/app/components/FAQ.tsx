@@ -9,7 +9,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "¿Necesito internet para usar la app?",
-    a: "Sí para registrarte, sincronizar tu colección entre dispositivos y para usar la función de Intercambio QR (porque ambos celulares deben validar la información). Una vez sincronizado, puedes consultar tu álbum sin conexión.",
+    a: "Solo necesitas internet para descargar la app y para actualizar los resultados de los partidos. Para registrar y editar tus estampas, así como para hacer el Intercambio por QR, no necesitas conexión a internet.",
   },
   {
     q: "¿En qué dispositivos estará disponible?",
@@ -17,15 +17,15 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "¿Cuánto cuesta la aplicación?",
-    a: "La descarga y las funciones principales (registrar tu colección, ver faltantes, intercambiar por QR) son completamente gratuitas. Más adelante podríamos ofrecer extras opcionales, pero no son necesarios para disfrutar la app.",
+    a: "La descarga y las funciones principales (registrar tu colección, ver faltantes, intercambiar por QR) son completamente gratuitas. Dentro de la app habrá compras integradas opcionales, pero podrás seguir utilizando todas las características básicas sin pagar nada.",
   },
   {
     q: "¿Cómo funciona el Intercambio por QR?",
-    a: "Cada usuario tiene un QR personal con su lista de repetidas y faltantes. Al escanearse mutuamente, la app cruza ambas colecciones y te muestra exactamente qué estampas pueden cambiar entre ustedes. Más abajo en esta página verás los 3 pasos.",
+    a: "Cada usuario tiene un QR personal con su lista de repetidas y faltantes. Al escanearse mutuamente, la app cruza ambas colecciones y te muestra exactamente qué estampas pueden cambiar entre ustedes. Más arriba en esta página aparecen los 3 pasos.",
   },
   {
     q: "¿Cómo registro una estampa?",
-    a: "¡Es muy fácil! En la sección de 'Mi Álbum', selecciona el equipo y simplemente toca el número de la estampa. Un toque para indicar que la tienes, dos toques si la tienes repetida. ¡Así de rápido y profesional!",
+    a: "¡Es muy fácil! En la sección de 'Mi Álbum', selecciona el equipo y simplemente toca el número de la estampa. Un toque para indicar que la tienes, dos toques si la tienes repetida. ¡Así de rápido y sencillo!",
   },
 ];
 

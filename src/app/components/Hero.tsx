@@ -71,7 +71,7 @@ export function Hero() {
               href="#intercambio"
               className="flex items-center justify-center gap-2 px-8 py-4 text-base font-bold text-brand-dark dark:text-brand-on-dark bg-[var(--color-surface-soft)] border border-[var(--color-surface-border)] hover:bg-brand-soft rounded-full transition-all"
             >
-              <QrCode className="w-5 h-5 text-mx-red" />
+              <QrCode className="w-5 h-5 text-brand" />
               <span>Cómo funciona el QR</span>
             </a>
           </div>

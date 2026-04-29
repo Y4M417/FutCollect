@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { Bell, Menu, X } from "lucide-react";
 import { useState } from "react";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo-niu.png";
 import { ThemeSwitcher } from "../theme/ThemeSwitcher";
 import { GOOGLE_FORM_URL } from "../config";
 
