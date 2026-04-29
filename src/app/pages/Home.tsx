@@ -1,21 +1,26 @@
 import { Navbar } from "../components/Navbar";
 import { Hero } from "../components/Hero";
-import { NewsBanner } from "../components/NewsBanner";
+import { FAQ } from "../components/FAQ";
 import { Features } from "../components/Features";
+import { QRExchange } from "../components/QRExchange";
 import { Waitlist } from "../components/Waitlist";
 import { Footer } from "../components/Footer";
+import { ThemeProvider } from "../theme/ThemeContext";
 
 export function Home() {
   return (
-    <div className="min-h-screen bg-zinc-950 font-sans selection:bg-emerald-500/30 selection:text-emerald-200">
-      <Navbar />
-      <main>
-        <Hero />
-        <NewsBanner />
-        <Features />
-        <Waitlist />
-      </main>
-      <Footer />
-    </div>
+    <ThemeProvider>
+      <div className="min-h-screen font-sans selection:bg-brand/30 selection:text-brand-dark">
+        <Navbar />
+        <main>
+          <Hero />
+          <Features />
+          <QRExchange />
+          <FAQ />
+          <Waitlist />
+        </main>
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 }

@@ -1,86 +1,180 @@
 import { motion } from "motion/react";
-import { Filter, Calendar, Palette, Smartphone, Globe, RefreshCcw } from "lucide-react";
-// Asegúrate de cambiar estas rutas por las de tu proyecto local
-import img4 from "../../assets/2.png";
-import img3 from "../../assets/3.png";
-import imgUntitled from "../../assets/4.png";
-import imgDddd from "../../assets/1.png";
+import { Filter, Calendar, PieChart, Smartphone, RefreshCcw } from "lucide-react";
+import { ThemedImage } from "../theme/ThemedImage";
+import { PhoneMockup } from "./PhoneMockup";
+import {
+  QR_SWAP_IMAGES,
+  VISUAL_CONTROL_IMAGES,
+  CALENDAR_IMAGES,
+  CUSTOMIZATION_IMAGES,
+} from "../theme/featureImages";
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, delay: i * 0.12, ease: [0.25, 0.46, 0.45, 0.94] as const },
+  }),
+};
 
 export function Features() {
   return (
-    <section id="caracteristicas" className="py-24 bg-zinc-950 relative">
+    <section id="caracteristicas" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">Todo lo que necesitas para completar tu álbum</h2>
-          <p className="text-zinc-400 text-lg">Olvídate de las listas de papel. Usa nuestras herramientas para saber exactamente qué tienes, qué te falta y cómo conseguirlo más rápido.</p>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.8 }}
+          className="text-center max-w-2xl mx-auto mb-20"
+        >
+          <h2 className="features-section-title">
+            Todo lo que necesitas para completar tu álbum
+          </h2>
+          <p className="features-section-subtitle mx-auto">
+            Olvídate de las listas de papel. Usa nuestras herramientas para saber exactamente qué tienes, qué te falta y cómo conseguirlo más rápido.
+          </p>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="features-bento">
 
-          <motion.div whileHover={{ y: -5 }} className="md:col-span-2 row-span-2 rounded-[2rem] bg-zinc-900 border border-white/5 overflow-hidden group relative flex flex-col">
-            <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="p-8 md:p-12 z-10 flex-1">
-              <div className="w-14 h-14 rounded-2xl bg-emerald-500/20 flex items-center justify-center mb-6">
-                <RefreshCcw className="w-7 h-7 text-emerald-400" />
+          <motion.div
+            custom={0}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={cardVariants}
+            className="feature-card feature-card--hero"
+          >
+            <div className="feature-card-content">
+              <div className="feature-icon" style={{ background: "color-mix(in srgb, var(--color-brand) 15%, transparent)" }}>
+                <RefreshCcw className="w-7 h-7 text-brand" />
               </div>
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">Intercambio Rápido por QR</h3>
-              <p className="text-zinc-400 text-lg max-w-md">
+              <h3>Intercambio Rápido por QR</h3>
+              <p>
                 Nuestra función estrella. Escanea el código de tu amigo y la app analizará ambas colecciones al instante. Te diremos exactamente qué intercambiar.
               </p>
             </div>
-            <div className="relative h-64 md:h-96 mt-auto overflow-hidden">
-              <img src={imgDddd} alt="QR Swap Feature" className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" />
-              <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent" />
+            <div className="feature-card-phone">
+              <PhoneMockup glowColor="var(--color-brand)">
+                <div className="relative w-full h-full">
+                  <ThemedImage
+                    map={QR_SWAP_IMAGES}
+                    alt="QR Swap Feature"
+                    className="object-cover"
+                  />
+                </div>
+              </PhoneMockup>
             </div>
           </motion.div>
 
-          <motion.div whileHover={{ y: -5 }} className="rounded-[2rem] bg-zinc-900 border border-white/5 overflow-hidden group relative flex flex-col">
-            <div className="p-8 z-10">
-              <div className="w-12 h-12 rounded-xl bg-cyan-500/20 flex items-center justify-center mb-6">
-                <Smartphone className="w-6 h-6 text-cyan-400" />
+          <motion.div
+            custom={1}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={cardVariants}
+            className="feature-card feature-card--side"
+          >
+            <div className="feature-card-content">
+              <div className="feature-icon" style={{ background: "color-mix(in srgb, var(--color-brand-bright) 15%, transparent)" }}>
+                <Smartphone className="w-6 h-6 text-brand-bright" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">Control Visual</h3>
-              <p className="text-zinc-400">Navega por equipos, ve tu progreso circular y marca estampas con un toque.</p>
-            </div>
-            <div className="relative h-48 mt-auto px-8 overflow-hidden">
-              <img src={img4} alt="Visual Control" className="w-full h-full object-cover object-top rounded-t-xl shadow-2xl group-hover:-translate-y-2 transition-transform duration-500" />
-            </div>
-          </motion.div>
-
-          <motion.div whileHover={{ y: -5 }} className="rounded-[2rem] bg-zinc-900 border border-white/5 overflow-hidden group relative p-8 flex flex-col justify-center">
-            <div className="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center mb-6">
-              <Filter className="w-6 h-6 text-purple-400" />
-            </div>
-            <h3 className="text-xl font-bold text-white mb-3">Filtros Inteligentes</h3>
-            <p className="text-zinc-400">Obtén listas exactas de las estampas que te faltan y las que tienes repetidas.</p>
-          </motion.div>
-
-          <motion.div whileHover={{ y: -5 }} className="rounded-[2rem] bg-zinc-900 border border-white/5 overflow-hidden group relative flex flex-col">
-            <div className="p-8 z-10">
-              <div className="w-12 h-12 rounded-xl bg-orange-500/20 flex items-center justify-center mb-6">
-                <Calendar className="w-6 h-6 text-orange-400" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">Calendario Oficial</h3>
-              <p className="text-zinc-400">Sigue el mundial. Horarios ajustados automáticamente a tu zona local.</p>
-            </div>
-            <div className="relative h-48 mt-auto px-8 overflow-hidden">
-              <img src={img3} alt="Match Calendar" className="w-full h-full object-cover object-top rounded-t-xl shadow-2xl group-hover:-translate-y-2 transition-transform duration-500" />
-            </div>
-          </motion.div>
-
-          <motion.div whileHover={{ y: -5 }} className="md:col-span-2 rounded-[2rem] bg-zinc-900 border border-white/5 overflow-hidden group relative flex flex-col sm:flex-row items-center">
-            <div className="p-8 md:p-12 z-10 flex-1">
-              <div className="w-12 h-12 rounded-xl bg-pink-500/20 flex items-center justify-center mb-6">
-                <Palette className="w-6 h-6 text-pink-400" />
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-3">Personalización Temática</h3>
-              <p className="text-zinc-400">
-                Elige los colores de tu país: México, USA o Canadá. Soporte en Español, Inglés y Portugués <Globe className="inline w-4 h-4 ml-1" />.
+              <h3>Control Visual</h3>
+              <p>
+                Navega por equipos, marca estampas con un toque y mantén un control de tu avance. Registrar tu progreso nunca ha sido tan fácil y profesional.
               </p>
             </div>
-            <div className="relative w-full sm:w-1/2 h-64 sm:h-full overflow-hidden">
-              <img src={imgUntitled} alt="Customization" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-              <div className="absolute inset-0 bg-gradient-to-r from-zinc-900 via-transparent to-transparent hidden sm:block" />
+            <div className="feature-card-phone">
+              <PhoneMockup glowColor="var(--color-brand-bright)" scale="0.9">
+                <div className="relative w-full h-full">
+                  <ThemedImage
+                    map={VISUAL_CONTROL_IMAGES}
+                    alt="Visual Control"
+                    className="object-cover"
+                  />
+                </div>
+              </PhoneMockup>
+            </div>
+          </motion.div>
+
+          <motion.div
+            custom={2}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={cardVariants}
+            className="feature-card feature-card--info"
+          >
+            <div className="feature-card-content">
+              <div className="feature-icon" style={{ background: "color-mix(in srgb, var(--color-mx-red) 15%, transparent)" }}>
+                <Filter className="w-6 h-6 text-mx-red" />
+              </div>
+              <h3>Filtros Inteligentes</h3>
+              <p>
+                Obtén listas exactas de las estampas que te faltan y las que tienes repetidas. Filtra por grupo, equipo, o estado para encontrar lo que buscas al instante.
+              </p>
+            </div>
+          </motion.div>
+
+          <motion.div
+            custom={3}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={cardVariants}
+            className="feature-card feature-card--wide"
+          >
+            <div className="feature-card-content">
+              <div className="feature-icon" style={{ background: "color-mix(in srgb, var(--color-mx-red) 15%, transparent)" }}>
+                <PieChart className="w-6 h-6 text-mx-red" />
+              </div>
+              <h3>Estadísticas Detalladas</h3>
+              <p>
+                Consulta tu progreso general, mantén registro de tus estampas faltantes y repetidas, y obtén información precisa de cómo avanza tu colección en cada grupo del álbum mundialista.
+              </p>
+            </div>
+            <div className="feature-card-phone">
+              <PhoneMockup glowColor="var(--color-mx-red)" scale="0.95">
+                <div className="relative w-full h-full">
+                  <ThemedImage
+                    map={CUSTOMIZATION_IMAGES}
+                    alt="Estadísticas Detalladas"
+                    className="object-cover"
+                  />
+                </div>
+              </PhoneMockup>
+            </div>
+          </motion.div>
+
+          <motion.div
+            custom={4}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={cardVariants}
+            className="feature-card feature-card--calendar"
+          >
+            <div className="feature-card-content">
+              <div className="feature-icon" style={{ background: "color-mix(in srgb, var(--color-brand-dark) 15%, transparent)" }}>
+                <Calendar className="w-6 h-6 text-brand-dark dark:text-brand-on-dark" />
+              </div>
+              <h3>Calendario Oficial</h3>
+              <p>
+                Sigue todos los partidos del mundial con horarios ajustados automáticamente a tu zona local. Nunca más te pierdas un juego — la app te muestra qué equipos juegan, a qué hora y en qué grupo.
+              </p>
+            </div>
+            <div className="feature-card-phone">
+              <PhoneMockup glowColor="var(--color-brand-dark)" scale="0.95">
+                <div className="relative w-full h-full">
+                  <ThemedImage
+                    map={CALENDAR_IMAGES}
+                    alt="Match Calendar"
+                    className="object-cover"
+                  />
+                </div>
+              </PhoneMockup>
             </div>
           </motion.div>
 

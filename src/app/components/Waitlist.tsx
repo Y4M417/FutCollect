@@ -1,10 +1,22 @@
 import { motion } from "motion/react";
+import { Bell, ArrowRight } from "lucide-react";
+import { GOOGLE_FORM_URL } from "../config";
 
 export function Waitlist() {
   return (
-    <section className="py-24 bg-zinc-950 relative overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-[400px] bg-gradient-to-r from-emerald-500/20 to-cyan-500/20 blur-[100px] rounded-full pointer-events-none" />
-      
+    <section className="py-24 relative overflow-hidden">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl pointer-events-none">
+        <motion.div
+          aria-hidden
+          className="h-[400px] bg-gradient-to-r from-brand/20 to-brand-bright/20 blur-[100px] rounded-full"
+          animate={{
+            scale: [1, 1.15, 0.95, 1],
+            opacity: [0.7, 1, 0.85, 0.7],
+          }}
+          transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+        />
+      </div>
+
       <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -12,26 +24,26 @@ export function Waitlist() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">¿Listo para llenar tu álbum?</h2>
-          <p className="text-xl text-zinc-400 mb-10 max-w-2xl mx-auto">
-            Únete a la comunidad de coleccionistas más inteligente del mundo. Sé el primero en probar la Beta cerrada de FutCollect.
+          <h2 className="text-4xl md:text-6xl font-bold text-[var(--color-text-strong)] mb-6 tracking-tight">¿Listo para llenar tu álbum?</h2>
+          <p className="text-xl text-[var(--color-text-muted)] mb-10 max-w-2xl mx-auto">
+            Únete a la comunidad de coleccionistas para este mundial. Sé de los primeros en probar en su lanzamiento FutCollect.
           </p>
-          
-          <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onSubmit={(e) => e.preventDefault()}>
-            <input 
-              type="email" 
-              placeholder="Tu correo electrónico..." 
-              className="flex-1 bg-zinc-900 border border-white/10 rounded-full px-6 py-4 text-white focus:outline-none focus:border-emerald-500 transition-colors"
-              required
-            />
-            <button 
-              type="submit" 
-              className="px-8 py-4 font-bold text-zinc-950 bg-gradient-to-r from-emerald-400 to-cyan-400 hover:from-emerald-300 hover:to-cyan-300 rounded-full transition-all shadow-[0_0_20px_rgba(52,211,153,0.3)] shrink-0"
-            >
-              Unirme a la lista
-            </button>
-          </form>
-          <p className="mt-4 text-sm text-zinc-500">Disponible próximamente en iOS y Android.</p>
+
+          <motion.a
+            href={GOOGLE_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.05, y: -3 }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ type: "spring", stiffness: 300, damping: 18 }}
+            className="group inline-flex items-center justify-center gap-3 px-10 md:px-14 py-5 md:py-6 text-lg md:text-xl font-extrabold text-white bg-brand hover:bg-brand-bright rounded-full shadow-[0_0_40px_color-mix(in_srgb,var(--color-brand)_45%,transparent)]"
+          >
+            <Bell className="w-6 h-6 transition-transform duration-500 group-hover:rotate-12" />
+            <span>Unirme a la lista</span>
+            <ArrowRight className="w-6 h-6 transition-transform duration-300 group-hover:translate-x-1" />
+          </motion.a>
+
+          <p className="mt-6 text-sm text-[var(--color-text-muted)]">Disponible próximamente · Primero en iOS, después en Android.</p>
         </motion.div>
       </div>
     </section>
