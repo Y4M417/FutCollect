@@ -1,6 +1,5 @@
 {
   "type": "module",
-  "homepage": "https://y4m417.github.io/FutCollect",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
