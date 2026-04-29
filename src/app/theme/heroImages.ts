@@ -1,13 +1,12 @@
 import type { Country, Mode } from "./ThemeContext";
 
-// Reemplaza cada ruta por la imagen real del Hero correspondiente.
-// Son 6 combinaciones (3 países × 2 modos).
-import heroMexicoLight from "../../assets/placeholder.svg";
-import heroMexicoDark from "../../assets/placeholder.svg";
-import heroUsaLight from "../../assets/placeholder.svg";
-import heroUsaDark from "../../assets/placeholder.svg";
-import heroCanadaLight from "../../assets/placeholder.svg";
-import heroCanadaDark from "../../assets/placeholder.svg";
+// Hero principal — pantalla "home" por país y modo.
+import heroMexicoLight from "../../assets/mx-light-home.png";
+import heroMexicoDark from "../../assets/mx-dark-home.png";
+import heroUsaLight from "../../assets/usa-light-home.png";
+import heroUsaDark from "../../assets/usa-dark-home.png";
+import heroCanadaLight from "../../assets/cnd-light-home.png";
+import heroCanadaDark from "../../assets/cnd-dark-home.png";
 
 type ThemeKey = `${Country}-${Mode}`;
 
