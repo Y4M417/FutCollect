@@ -1,5 +1,11 @@
 {
   "type": "module",
+  "homepage": "https://y4m417.github.io/FutCollect",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
+  },
   "dependencies": {
     "lucide-react": "^1.11.0",
     "motion": "^12.38.0",
