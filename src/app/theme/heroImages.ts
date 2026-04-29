@@ -1,6 +1,5 @@
 import type { Country, Mode } from "./ThemeContext";
 
-// Hero principal — pantalla "home" por país y modo.
 import heroMexicoLight from "../../assets/mx-light-home.png";
 import heroMexicoDark from "../../assets/mx-dark-home.png";
 import heroUsaLight from "../../assets/usa-light-home.png";

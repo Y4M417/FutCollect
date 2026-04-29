@@ -1,8 +1,5 @@
 import type { ThemedImageMap } from "./ThemedImage";
 
-// =========================================================================
-// QR EXCHANGE — Paso 1: Registra tus estampas  →  imagen única (sin tema)
-// =========================================================================
 import step1Llenado from "../../assets/llenado-stamps.png";
 
 export const STEP_1_IMAGES: ThemedImageMap = {
@@ -14,10 +11,6 @@ export const STEP_1_IMAGES: ThemedImageMap = {
   "canada-dark": step1Llenado,
 };
 
-// =========================================================================
-// QR EXCHANGE — Paso 2: Genera o escanea el QR  →  pantalla "qr"
-// NOTA: México oscuro usa `mex-dark-qr.png` (prefijo "mex-" en vez de "mx-").
-// =========================================================================
 import step2MxLight from "../../assets/mx-light-qr.png";
 import step2MxDark from "../../assets/mex-dark-qr.png";
 import step2UsLight from "../../assets/usa-light-qr.png";
@@ -34,10 +27,6 @@ export const STEP_2_IMAGES: ThemedImageMap = {
   "canada-dark": step2CaDark,
 };
 
-// =========================================================================
-// QR EXCHANGE — Paso 3: Intercambien y listo  →  pantalla "resultado"
-// Solo varía por modo (claro/oscuro), no por país.
-// =========================================================================
 import step3Light from "../../assets/mex-light-resultado.jpg";
 import step3Dark from "../../assets/mex-dark-resultado.png";
 

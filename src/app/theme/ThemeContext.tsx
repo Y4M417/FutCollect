@@ -39,9 +39,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     try {
       window.localStorage.setItem(STORAGE_KEY, JSON.stringify({ country, mode }));
-    } catch {
-      // ignore
-    }
+    } catch {}
   }, [country, mode]);
 
   const value = useMemo<ThemeContextValue>(

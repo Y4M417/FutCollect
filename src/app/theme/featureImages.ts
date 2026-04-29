@@ -1,10 +1,5 @@
 import type { ThemedImageMap } from "./ThemedImage";
 
-// =========================================================================
-// FEATURE: Intercambio Rápido por QR  →  pantalla "qr"
-// NOTA: el archivo de México oscuro está como `mex-dark-qr.png` (prefijo
-// "mex-" en lugar de "mx-"). Si lo renombras, actualiza el import.
-// =========================================================================
 import qrSwapMxLight from "../../assets/mx-light-qr.png";
 import qrSwapMxDark from "../../assets/mex-dark-qr.png";
 import qrSwapUsLight from "../../assets/usa-light-qr.png";
@@ -21,15 +16,12 @@ export const QR_SWAP_IMAGES: ThemedImageMap = {
   "canada-dark": qrSwapCaDark,
 };
 
-// =========================================================================
-// FEATURE: Control Visual  →  pantalla "album"
-// =========================================================================
 import visualMxLight from "../../assets/mx-light-album.png";
 import visualMxDark from "../../assets/mx-dark-album.png";
 import visualUsLight from "../../assets/usa-light-album.png";
 import visualUsDark from "../../assets/usa-dark-album.png";
 import visualCaLight from "../../assets/cnd-light-album.png";
-import visualCaDark from "../../assets/cnd-light-album.png"; // TODO: Reemplazar con cnd-dark-album.png cuando esté disponible
+import visualCaDark from "../../assets/cnd-light-album.png";
 
 export const VISUAL_CONTROL_IMAGES: ThemedImageMap = {
   "mexico-light": visualMxLight,
@@ -40,9 +32,6 @@ export const VISUAL_CONTROL_IMAGES: ThemedImageMap = {
   "canada-dark": visualCaDark,
 };
 
-// =========================================================================
-// FEATURE: Calendario Oficial  →  pantalla "calendar"
-// =========================================================================
 import calendarMxLight from "../../assets/mx-light-calendar.png";
 import calendarMxDark from "../../assets/mx-dark-calendar.png";
 import calendarUsLight from "../../assets/usa-light-calendar.png";
@@ -59,9 +48,6 @@ export const CALENDAR_IMAGES: ThemedImageMap = {
   "canada-dark": calendarCaDark,
 };
 
-// =========================================================================
-// FEATURE: Personalización Temática  →  pantalla "stats"
-// =========================================================================
 import customizationMxLight from "../../assets/mx-light-stats.png";
 import customizationMxDark from "../../assets/mx-dark-stats.png";
 import customizationUsLight from "../../assets/usa-light-stats.png";

@@ -22,7 +22,6 @@ export function Features() {
   return (
     <section id="caracteristicas" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-6">
-        {/* ── Section header ─────────────────────────────────── */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -38,13 +37,8 @@ export function Features() {
           </p>
         </motion.div>
 
-        {/* ── Bento Grid ─────────────────────────────────────── */}
         <div className="features-bento">
 
-          {/* ╔═══════════════════════════════════════════════════╗
-              ║  CARD 1 — Intercambio Rápido por QR (hero)       ║
-              ║  Side-by-side: text left, phone right             ║
-              ╚═══════════════════════════════════════════════════╝ */}
           <motion.div
             custom={0}
             initial="hidden"
@@ -75,10 +69,6 @@ export function Features() {
             </div>
           </motion.div>
 
-          {/* ╔═══════════════════════════════════════════════════╗
-              ║  CARD 2 — Control Visual (stacked, side)         ║
-              ║  Text on top, phone below                        ║
-              ╚═══════════════════════════════════════════════════╝ */}
           <motion.div
             custom={1}
             initial="hidden"
@@ -109,10 +99,6 @@ export function Features() {
             </div>
           </motion.div>
 
-          {/* ╔═══════════════════════════════════════════════════╗
-              ║  CARD 3 — Filtros Inteligentes (info only)       ║
-              ║  Text-only card, no phone mockup                 ║
-              ╚═══════════════════════════════════════════════════╝ */}
           <motion.div
             custom={2}
             initial="hidden"
@@ -132,10 +118,6 @@ export function Features() {
             </div>
           </motion.div>
 
-          {/* ╔═══════════════════════════════════════════════════╗
-              ║  CARD 4 — Estadísticas Detalladas (wide reverse) ║
-              ║  Phone left, text right                          ║
-              ╚═══════════════════════════════════════════════════╝ */}
           <motion.div
             custom={3}
             initial="hidden"
@@ -166,10 +148,6 @@ export function Features() {
             </div>
           </motion.div>
 
-          {/* ╔═══════════════════════════════════════════════════╗
-              ║  CARD 5 — Calendario Oficial (full-width)         ║
-              ║  Text left, phone right                           ║
-              ╚═══════════════════════════════════════════════════╝ */}
           <motion.div
             custom={4}
             initial="hidden"

@@ -19,11 +19,6 @@ type Props = {
   className?: string;
 };
 
-/**
- * Imagen que cambia según el tema (país + modo) con crossfade.
- * Debe ir DENTRO de un contenedor con `position: relative` y dimensiones definidas
- * (la imagen se posiciona absoluta `inset-0` para permitir el cruce de fundido).
- */
 export function ThemedImage({ map, alt, className }: Props) {
   const { country, mode } = useTheme();
   const src = pickThemedImage(map, country, mode);
