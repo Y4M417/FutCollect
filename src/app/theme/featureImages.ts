@@ -48,7 +48,7 @@ export const CALENDAR_IMAGES: ThemedImageMap = {
   "canada-dark": calendarCaDark,
 };
 
-import customizationMxLight from "../../assets/mx-light-stats.png";
+import customizationMxLight from "../../assets/mx-dark-stats.png";
 import customizationMxDark from "../../assets/mx-dark-stats.png";
 import customizationUsLight from "../../assets/usa-light-stats.png";
 import customizationUsDark from "../../assets/usa-dark-stats.png";

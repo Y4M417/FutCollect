@@ -1,4 +1,5 @@
 import { MessageCircle, Camera, Globe } from "lucide-react";
+import { Link } from "react-router";
 import logo from "../../assets/logo-niu.png";
 
 export function Footer() {
@@ -23,7 +24,7 @@ export function Footer() {
             <div className="flex flex-col gap-3 text-center md:text-left">
               <h4 className="text-white font-semibold mb-2">Soporte</h4>
               <a href="#preguntas" className="text-white/80 hover:text-white text-sm transition-colors">Preguntas</a>
-              <a href="#" className="text-white/80 hover:text-white text-sm transition-colors">Privacidad</a>
+              <Link to="/privacy" className="text-white/80 hover:text-white text-sm transition-colors">Privacidad</Link>
             </div>
           </div>
         </div>
