@@ -9,7 +9,7 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[var(--color-surface)]/80 backdrop-blur-md border-b border-[var(--color-surface-border)]">
+    <nav className="relative bg-[var(--color-surface)]/80 backdrop-blur-md border-b border-[var(--color-surface-border)]">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-2.5">
           <img src={logo} alt="FutCollect" className="w-9 h-9 object-contain" />
