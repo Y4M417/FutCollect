@@ -33,6 +33,16 @@ export function ThemeSwitcher() {
 
   return (
     <div ref={wrapperRef} className="relative">
+      <motion.span
+        aria-hidden
+        className="absolute inset-0 rounded-full pointer-events-none"
+        style={{
+          backgroundColor: "var(--color-brand)",
+          filter: "blur(10px)",
+        }}
+        animate={{ scale: [1, 1.25, 1], opacity: [0.45, 0.75, 0.45] }}
+        transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+      />
       <button
         type="button"
         aria-label="Cambiar tema"
