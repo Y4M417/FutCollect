@@ -3,8 +3,7 @@ import { Sparkles, ArrowRight } from "lucide-react";
 import { useTheme } from "../theme/ThemeContext";
 import type { Country, Mode } from "../theme/ThemeContext";
 
-const WEB_APP_URL = "https://futcollect-web.netlify.app/";
-
+import { IOS_APP_URL } from "../config";
 type BannerPalette = {
   from: string;
   via: string;
@@ -106,10 +105,10 @@ export function AnnouncementBanner() {
           transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
         >
           <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
-          <span>¡Ya se encuentra la versión web de la aplicación!</span>
+          <span>¡La app ya está disponible para <strong className="font-black text-lg">iOS</strong>!</span>
         </motion.div>
         <a
-          href={WEB_APP_URL}
+          href={IOS_APP_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-1.5 px-4 py-1.5 text-xs sm:text-sm font-bold rounded-full transition-all shadow-md hover:shadow-lg hover:scale-105"

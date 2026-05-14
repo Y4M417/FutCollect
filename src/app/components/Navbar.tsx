@@ -1,9 +1,9 @@
 import { motion } from "motion/react";
-import { Bell, Menu, X } from "lucide-react";
+import { Bell, Menu, X, Globe } from "lucide-react";
 import { useState } from "react";
 import logo from "../../assets/logo-niu.png";
 import { ThemeSwitcher } from "../theme/ThemeSwitcher";
-import { GOOGLE_FORM_URL } from "../config";
+import { WEB_APP_URL } from "../config";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,13 +25,13 @@ export function Navbar() {
         <div className="hidden md:flex items-center gap-3">
           <ThemeSwitcher />
           <a
-            href={GOOGLE_FORM_URL}
+            href={WEB_APP_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-bold text-white bg-brand hover:bg-brand-bright rounded-full transition-all shadow-[0_0_20px_color-mix(in_srgb,var(--color-brand)_35%,transparent)]"
           >
-            <Bell className="w-4 h-4" />
-            Notifícame
+            <Globe className="w-4 h-4" />
+            Versión Web
           </a>
         </div>
 
@@ -54,13 +54,13 @@ export function Navbar() {
           <a href="#intercambio" className="text-base font-medium text-[var(--color-text-strong)]" onClick={() => setIsOpen(false)}>Intercambio QR</a>
           <div className="h-px w-full bg-[var(--color-surface-border)] my-2" />
           <a
-            href={GOOGLE_FORM_URL}
+            href={WEB_APP_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 w-full py-3 text-sm font-bold text-white bg-brand hover:bg-brand-bright rounded-full"
           >
-            <Bell className="w-4 h-4" />
-            Notifícame
+            <Globe className="w-4 h-4" />
+            Versión Web
           </a>
         </motion.div>
       )}

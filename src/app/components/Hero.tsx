@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "motion/react";
-import { ArrowRight, QrCode, Sparkles, Bell } from "lucide-react";
-import { GOOGLE_FORM_URL } from "../config";
+import { ArrowRight, QrCode, Sparkles, Globe } from "lucide-react";
+import { WEB_APP_URL } from "../config";
 import { useTheme } from "../theme/ThemeContext";
 import { getHeroImage, getHeroImageKey } from "../theme/heroImages";
 
@@ -39,9 +39,15 @@ export function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex flex-col gap-6"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand/10 border border-brand/30 w-fit">
-            <Sparkles className="w-4 h-4 text-brand" />
-            <span className="text-xs font-semibold text-brand-dark dark:text-brand-on-dark tracking-wide uppercase">Próximamente · App en revisión</span>
+          <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-brand/10 border border-brand/30 w-fit">
+            <Sparkles className="w-4 h-4 text-brand shrink-0" />
+            <span className="text-[11px] sm:text-xs font-bold text-brand-dark dark:text-brand-on-dark tracking-wider uppercase flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
+              <span>¡Disponible en iOS!</span>
+              <span className="opacity-40">•</span>
+              <span className="opacity-90">Android en camino</span>
+              <span className="opacity-40">•</span>
+              <span className="opacity-90">Usa la versión Web</span>
+            </span>
           </div>
 
           <h1 className="text-5xl md:text-7xl font-extrabold text-[var(--color-text-strong)] leading-[1.1] tracking-tight">
@@ -56,24 +62,29 @@ export function Hero() {
             Registra tus estampas, descubre cuáles te faltan y encuentra el intercambio perfecto con tus amigos en segundos usando tecnología QR. Sin hojas de papel, sin complicaciones.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 mt-4">
-            <a
-              href={GOOGLE_FORM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 px-8 py-4 text-base font-bold text-white bg-brand hover:bg-brand-bright rounded-full transition-all shadow-[0_0_25px_color-mix(in_srgb,var(--color-brand)_40%,transparent)]"
-            >
-              <Bell className="w-5 h-5" />
-              <span>Notifícame al lanzamiento</span>
-              <ArrowRight className="w-5 h-5" />
-            </a>
-            <a
-              href="#intercambio"
-              className="flex items-center justify-center gap-2 px-8 py-4 text-base font-bold text-brand-dark dark:text-brand-on-dark bg-[var(--color-surface-soft)] border border-[var(--color-surface-border)] hover:bg-brand-soft rounded-full transition-all"
-            >
-              <QrCode className="w-5 h-5 text-brand" />
-              <span>Cómo funciona el QR</span>
-            </a>
+          <div className="flex flex-col gap-3 mt-4">
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href={WEB_APP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 px-8 py-4 text-base font-bold text-white bg-brand hover:bg-brand-bright rounded-full transition-all shadow-[0_0_25px_color-mix(in_srgb,var(--color-brand)_40%,transparent)]"
+              >
+                <Globe className="w-5 h-5" />
+                <span>Ve a la versión web</span>
+                <ArrowRight className="w-5 h-5" />
+              </a>
+              <a
+                href="#intercambio"
+                className="flex items-center justify-center gap-2 px-8 py-4 text-base font-bold text-brand-dark dark:text-brand-on-dark bg-[var(--color-surface-soft)] border border-[var(--color-surface-border)] hover:bg-brand-soft rounded-full transition-all"
+              >
+                <QrCode className="w-5 h-5 text-brand" />
+                <span>Cómo funciona el QR</span>
+              </a>
+            </div>
+            <p className="text-xs font-medium text-[var(--color-text-muted)] sm:px-4 text-center sm:text-left opacity-80">
+              * Puedes instalar la versión web como app (PWA) en tu dispositivo.
+            </p>
           </div>
         </motion.div>
 
