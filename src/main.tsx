@@ -4,6 +4,7 @@ import App from './App.tsx'
 import './styles/fonts.css'
 import './styles/theme.css'
 import './styles/features.css'
+import './styles/hero-carousel.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

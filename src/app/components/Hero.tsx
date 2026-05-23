@@ -1,16 +1,11 @@
-import { AnimatePresence, motion } from "motion/react";
-import { ArrowRight, QrCode, Sparkles, Globe } from "lucide-react";
-import { WEB_APP_URL } from "../config";
-import { useTheme } from "../theme/ThemeContext";
-import { getHeroImage, getHeroImageKey } from "../theme/heroImages";
+import { motion } from "motion/react";
+import { ArrowRight, QrCode, Globe, Apple } from "lucide-react";
+import { WEB_APP_URL, IOS_APP_URL } from "../config";
+import { HeroCarousel } from "./HeroCarousel";
 
 export function Hero() {
-  const { country, mode } = useTheme();
-  const heroSrc = getHeroImage(country, mode);
-  const heroKey = getHeroImageKey(country, mode);
-
   return (
-    <section id="top" className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+    <section id="top" className="relative pt-24 pb-12 md:pt-32 md:pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
       <motion.div
         aria-hidden
         className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand/20 rounded-full blur-[120px] pointer-events-none"
@@ -32,98 +27,66 @@ export function Hero() {
         transition={{ duration: 16, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-6 lg:gap-12 items-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex flex-col gap-6"
+          className="flex flex-col gap-4 sm:gap-6 order-2 lg:order-1"
         >
-          <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-brand/10 border border-brand/30 w-fit">
-            <Sparkles className="w-4 h-4 text-brand shrink-0" />
-            <span className="text-[11px] sm:text-xs font-bold text-brand-dark dark:text-brand-on-dark tracking-wider uppercase flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
-              <span>¡Disponible en iOS!</span>
-              <span className="opacity-40">•</span>
-              <span className="opacity-90">Android en camino</span>
-              <span className="opacity-40">•</span>
-              <span className="opacity-90">Usa la versión Web</span>
-            </span>
-          </div>
-
-          <h1 className="text-5xl md:text-7xl font-extrabold text-[var(--color-text-strong)] leading-[1.1] tracking-tight">
-            El control de tu <br/>
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold text-[var(--color-text-strong)] leading-[1.1] tracking-tight">
+            El control de tu{" "}
+            <br className="hidden lg:inline" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-brand-bright">
               álbum del Mundial
-            </span> <br/>
+            </span>{" "}
+            <br className="hidden lg:inline" />
             en tu bolsillo.
           </h1>
 
-          <p className="text-lg md:text-xl text-[var(--color-text-muted)] leading-relaxed max-w-xl">
+          <p className="hidden md:block text-lg md:text-xl text-[var(--color-text-muted)] leading-relaxed max-w-xl">
             Registra tus estampas, descubre cuáles te faltan y encuentra el intercambio perfecto con tus amigos en segundos usando tecnología QR. Sin hojas de papel, sin complicaciones.
           </p>
 
-          <div className="flex flex-col gap-3 mt-4">
-            <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col gap-3 max-[420px]:gap-2 mt-4 max-[420px]:mt-2">
+            <div className="flex flex-col sm:flex-row gap-4 max-[420px]:gap-2">
               <a
                 href={WEB_APP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 px-8 py-4 text-base font-bold text-white bg-brand hover:bg-brand-bright rounded-full transition-all shadow-[0_0_25px_color-mix(in_srgb,var(--color-brand)_40%,transparent)]"
+                className="flex-1 flex items-center justify-center gap-2 max-[420px]:gap-1.5 px-6 max-[420px]:px-4 py-4 max-[420px]:py-2.5 text-base max-[420px]:text-sm font-bold text-white bg-brand hover:bg-brand-bright rounded-full transition-all shadow-[0_0_25px_color-mix(in_srgb,var(--color-brand)_40%,transparent)]"
               >
-                <Globe className="w-5 h-5" />
+                <Globe className="w-5 h-5 max-[420px]:w-4 max-[420px]:h-4" />
                 <span>Ve a la versión web</span>
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-5 h-5 max-[420px]:w-4 max-[420px]:h-4" />
               </a>
-              <a
-                href="#intercambio"
-                className="flex items-center justify-center gap-2 px-8 py-4 text-base font-bold text-brand-dark dark:text-brand-on-dark bg-[var(--color-surface-soft)] border border-[var(--color-surface-border)] hover:bg-brand-soft rounded-full transition-all"
+              <motion.a
+                href={IOS_APP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                animate={{ scale: [1, 1.06, 1] }}
+                transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+                className="flex-1 flex items-center justify-center gap-2 max-[420px]:gap-1.5 px-6 max-[420px]:px-4 py-4 max-[420px]:py-2.5 text-base max-[420px]:text-sm font-bold text-white bg-brand hover:bg-brand-bright rounded-full shadow-[0_0_25px_color-mix(in_srgb,var(--color-brand)_40%,transparent)]"
               >
-                <QrCode className="w-5 h-5 text-brand" />
-                <span>Cómo funciona el QR</span>
-              </a>
+                <Apple className="w-5 h-5 max-[420px]:w-4 max-[420px]:h-4" />
+                <span>Ve a la app en iOS</span>
+                <ArrowRight className="w-5 h-5 max-[420px]:w-4 max-[420px]:h-4" />
+              </motion.a>
             </div>
+            <a
+              href="#intercambio"
+              className="w-full flex items-center justify-center gap-2 max-[420px]:gap-1.5 px-8 max-[420px]:px-4 py-4 max-[420px]:py-2.5 text-base max-[420px]:text-sm font-bold text-brand-dark dark:text-brand-on-dark bg-[var(--color-surface-soft)] border border-[var(--color-surface-border)] hover:bg-brand-soft rounded-full transition-all"
+            >
+              <QrCode className="w-5 h-5 max-[420px]:w-4 max-[420px]:h-4 text-brand" />
+              <span>Cómo funciona el QR</span>
+            </a>
             <p className="text-xs font-medium text-[var(--color-text-muted)] sm:px-4 text-center sm:text-left opacity-80">
               * Puedes instalar la versión web como app (PWA) en tu dispositivo.
             </p>
           </div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-          className="relative lg:ml-auto w-full max-w-md mx-auto"
-        >
-          <div className="relative rounded-[2.5rem] overflow-hidden border-[8px] border-[var(--color-surface-soft)] shadow-2xl shadow-brand/30 aspect-[9/19] bg-[var(--color-surface-soft)]">
-            <AnimatePresence mode="wait" initial={false}>
-              <motion.img
-                key={heroKey}
-                src={heroSrc}
-                alt="FutCollect App Screenshot"
-                initial={{ opacity: 0, scale: 1.04 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.98 }}
-                transition={{ duration: 0.45, ease: "easeOut" }}
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-            </AnimatePresence>
-          </div>
-          <motion.div
-            animate={{ y: [-10, 10, -10] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -right-6 top-20 bg-[var(--color-surface)]/95 backdrop-blur border border-[var(--color-surface-border)] p-4 rounded-2xl shadow-xl hidden md:block"
-          >
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-brand/15 flex items-center justify-center">
-                <QrCode className="w-5 h-5 text-brand" />
-              </div>
-              <div>
-                <p className="text-sm font-bold text-[var(--color-text-strong)]">¡Match encontrado!</p>
-                <p className="text-xs text-[var(--color-text-muted)]">12 estampas para cambiar</p>
-              </div>
-            </div>
-          </motion.div>
-        </motion.div>
+        <HeroCarousel />
       </div>
     </section>
   );

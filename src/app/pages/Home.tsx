@@ -1,5 +1,4 @@
 import { Navbar } from "../components/Navbar";
-import { AnnouncementBanner } from "../components/AnnouncementBanner";
 import { Hero } from "../components/Hero";
 import { FAQ } from "../components/FAQ";
 import { Features } from "../components/Features";
@@ -14,7 +13,6 @@ export function Home() {
     <ThemeProvider>
       <div className="min-h-screen font-sans selection:bg-brand/30 selection:text-brand-dark">
         <div className="fixed top-0 left-0 right-0 z-50">
-          <AnnouncementBanner />
           <Navbar />
         </div>
         <main>
