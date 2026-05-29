@@ -1,40 +1,69 @@
 import type { ThemedImageMap } from "./ThemedImage";
 
-import step1Llenado from "../../assets/llenado-stamps.png";
+// Step 1 – seleccionar país / equipo (PAIS screen)
+import step1MxLight  from "../../assets/MX/1-MX-PAIS.png";
+import step1MxDark   from "../../assets/MX/2-MX-PAIS.png";
+import step1UsLight  from "../../assets/USA/1-USA-PAIS.png";
+import step1UsDark   from "../../assets/USA/2-USA-PAIS.png";
+import step1CaLight  from "../../assets/CND/1-CND-PAIS.png";
+import step1CaDark   from "../../assets/CND/2-CND-PAIS.png";
 
 export const STEP_1_IMAGES: ThemedImageMap = {
-  "mexico-light": step1Llenado,
-  "mexico-dark": step1Llenado,
-  "usa-light": step1Llenado,
-  "usa-dark": step1Llenado,
-  "canada-light": step1Llenado,
-  "canada-dark": step1Llenado,
+  "mexico-light":  step1MxLight,
+  "mexico-dark":   step1MxDark,
+  "usa-light":     step1UsLight,
+  "usa-dark":      step1UsDark,
+  "canada-light":  step1CaLight,
+  "canada-dark":   step1CaDark,
 };
 
-import step2MxLight from "../../assets/mx-light-qr.png";
-import step2MxDark from "../../assets/mex-dark-qr.png";
-import step2UsLight from "../../assets/usa-light-qr.png";
-import step2UsDark from "../../assets/usa-dark-qr.png";
-import step2CaLight from "../../assets/cnd-light-qr.png";
-import step2CaDark from "../../assets/cnd-dark-qr.png";
+// Step 2 – escanear QR
+import step2MxLight  from "../../assets/MX/1-MX-QR.png";
+import step2MxDark   from "../../assets/MX/2-MX-QR.png";
+import step2UsLight  from "../../assets/USA/1-USA-QR.png";
+import step2UsDark   from "../../assets/USA/2-USA-QR.png";
+import step2CaLight  from "../../assets/CND/1-CND-QR.png";
+import step2CaDark   from "../../assets/CND/2-CND-QR.png";
 
 export const STEP_2_IMAGES: ThemedImageMap = {
-  "mexico-light": step2MxLight,
-  "mexico-dark": step2MxDark,
-  "usa-light": step2UsLight,
-  "usa-dark": step2UsDark,
-  "canada-light": step2CaLight,
-  "canada-dark": step2CaDark,
+  "mexico-light":  step2MxLight,
+  "mexico-dark":   step2MxDark,
+  "usa-light":     step2UsLight,
+  "usa-dark":      step2UsDark,
+  "canada-light":  step2CaLight,
+  "canada-dark":   step2CaDark,
 };
 
-import step3Light from "../../assets/mex-light-resultado.jpg";
-import step3Dark from "../../assets/mex-dark-resultado.png";
+// Step 3 – seleccionar estampas a intercambiar (INTERCAMBIO screen)
+import step3MxLight  from "../../assets/MX/1-MX-INTERCAMBIO.png";
+import step3MxDark   from "../../assets/MX/2-MX-INTERCAMBIO.png";
+import step3UsLight  from "../../assets/USA/1-USA-INTERCAMBIO.png";
+import step3UsDark   from "../../assets/USA/2-USA-INTERCAMBIO.png";
+import step3CaLight  from "../../assets/CND/1-CND-INTERCAMBIO.png";
+import step3CaDark   from "../../assets/CND/2-CND-INTERCAMBIO.png";
 
 export const STEP_3_IMAGES: ThemedImageMap = {
-  "mexico-light": step3Light,
-  "mexico-dark": step3Dark,
-  "usa-light": step3Light,
-  "usa-dark": step3Dark,
-  "canada-light": step3Light,
-  "canada-dark": step3Dark,
+  "mexico-light":  step3MxLight,
+  "mexico-dark":   step3MxDark,
+  "usa-light":     step3UsLight,
+  "usa-dark":      step3UsDark,
+  "canada-light":  step3CaLight,
+  "canada-dark":   step3CaDark,
+};
+
+// Step 4 – confirmar y guardar (TRADE screen)
+import step4MxLight  from "../../assets/MX/1-MX-TRADE.png";
+import step4MxDark   from "../../assets/MX/2-MX-TRADE.png";
+import step4UsLight  from "../../assets/USA/1-USA-TRADE.png";
+import step4UsDark   from "../../assets/USA/2-USA-TRADE.png";
+import step4CaLight  from "../../assets/CND/1-CND-TRADE.png";
+import step4CaDark   from "../../assets/CND/2-CND-TRADE.png";
+
+export const STEP_4_IMAGES: ThemedImageMap = {
+  "mexico-light":  step4MxLight,
+  "mexico-dark":   step4MxDark,
+  "usa-light":     step4UsLight,
+  "usa-dark":      step4UsDark,
+  "canada-light":  step4CaLight,
+  "canada-dark":   step4CaDark,
 };

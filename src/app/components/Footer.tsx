@@ -1,6 +1,6 @@
 import { MessageCircle, Camera, Globe } from "lucide-react";
 import { Link } from "react-router";
-import logo from "../../assets/logo-niu.png";
+import logo from "../../assets/Presets/logo-niu.png";
 
 export function Footer() {
   return (

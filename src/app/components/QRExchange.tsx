@@ -3,26 +3,32 @@ import { QrCode } from "lucide-react";
 import { ThemedImage } from "../theme/ThemedImage";
 import type { ThemedImageMap } from "../theme/ThemedImage";
 import { PhoneMockup } from "./PhoneMockup";
-import { STEP_1_IMAGES, STEP_2_IMAGES, STEP_3_IMAGES } from "../theme/qrStepImages";
+import { STEP_1_IMAGES, STEP_2_IMAGES, STEP_3_IMAGES, STEP_4_IMAGES } from "../theme/qrStepImages";
 
 const STEPS: { n: number; title: string; desc: string; imgMap: ThemedImageMap }[] = [
   {
     n: 1,
     title: "Registra tus estampas",
-    desc: "Abre tu álbum en FutCollect y marca las estampas que ya tienes y las repetidas. Así la app sabrá qué te falta y qué puedes intercambiar.",
+    desc: "Abre FutCollect y selecciona tu álbum. Navega por equipos y marca qué estampas ya tienes y cuáles tienes repetidas. Así la app sabe exactamente con qué cuentas para intercambiar.",
     imgMap: STEP_1_IMAGES,
   },
   {
     n: 2,
     title: "Genera o escanea el QR",
-    desc: "Abre Intercambio QR y genera tu código, o escanea el de tu amigo. La app cruza ambas colecciones al instante para encontrar coincidencias.",
+    desc: "Ve a la sección de Intercambio QR y genera tu código personal, o escanea el de tu amigo. En segundos, la app cruza ambas colecciones y detecta qué le sobra a cada quien.",
     imgMap: STEP_2_IMAGES,
   },
   {
     n: 3,
-    title: "Intercambien y listo",
-    desc: "La app te indica exactamente qué estampas puedes intercambiar con la otra persona. ¡Ya pueden hacer el intercambio sabiendo cuáles les sirven a ambos!",
+    title: "Elige qué intercambiar",
+    desc: "La app te muestra cuáles de tus repetidas le sirven a tu amigo, y cuáles de las suyas te sirven a ti. Solo ve seleccionando las estampas que van a intercambiar — sin adivinar, sin errores.",
     imgMap: STEP_3_IMAGES,
+  },
+  {
+    n: 4,
+    title: "Confirma y listo",
+    desc: "Una vez que ambos se pongan de acuerdo, da clic en Guardar. La app te muestra una vista previa del intercambio. Presiona Confirmar y los cambios se reflejan de inmediato en tu álbum.",
+    imgMap: STEP_4_IMAGES,
   },
 ];
 
@@ -50,11 +56,11 @@ export function QRExchange() {
             <QrCode className="w-4 h-4 text-brand" />
             <span className="text-xs font-semibold text-brand-dark dark:text-brand-on-dark tracking-wide uppercase">Intercambio QR</span>
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-[var(--color-text-strong)] tracking-tight mb-4">Cambia estampas en 3 pasos</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-[var(--color-text-strong)] tracking-tight mb-4">Cambia estampas en 4 pasos</h2>
           <p className="text-[var(--color-text-muted)] text-lg">Olvídate de comparar listas a mano. La app hace el match por ti.</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {STEPS.map((s) => (
             <motion.div
               key={s.n}

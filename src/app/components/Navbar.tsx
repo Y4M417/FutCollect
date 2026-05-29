@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { Menu, X, Globe } from "lucide-react";
 import { useState } from "react";
-import logo from "../../assets/logo-niu.png";
+import logo from "../../assets/Presets/logo-niu.png";
 import { ThemeSwitcher } from "../theme/ThemeSwitcher";
 import { WEB_APP_URL } from "../config";
 

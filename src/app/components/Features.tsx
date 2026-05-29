@@ -1,12 +1,17 @@
 import { motion } from "motion/react";
-import { Filter, Calendar, PieChart, Smartphone, RefreshCcw } from "lucide-react";
+import { Filter, Calendar, PieChart, Smartphone, RefreshCcw, Globe } from "lucide-react";
 import { ThemedImage } from "../theme/ThemedImage";
+import { PhoneSlide } from "../theme/SlideImage";
 import { PhoneMockup } from "./PhoneMockup";
+import { CountrySelector } from "../theme/CountrySelector";
 import {
   QR_SWAP_IMAGES,
   VISUAL_CONTROL_IMAGES,
+  VISUAL_CONTROL_IMAGES_2,
+  WORLD_PROGRESS_IMAGES,
   CALENDAR_IMAGES,
   CUSTOMIZATION_IMAGES,
+  CUSTOMIZATION_IMAGES_2,
 } from "../theme/featureImages";
 
 const cardVariants = {
@@ -27,7 +32,7 @@ export function Features() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.8 }}
-          className="text-center max-w-2xl mx-auto mb-20"
+          className="text-center max-w-2xl mx-auto mb-10"
         >
           <h2 className="features-section-title">
             Todo lo que necesitas para completar tu álbum
@@ -37,8 +42,13 @@ export function Features() {
           </p>
         </motion.div>
 
+        <div className="mb-10">
+          <CountrySelector />
+        </div>
+
         <div className="features-bento">
 
+          {/* ── QR Swap ── */}
           <motion.div
             custom={0}
             initial="hidden"
@@ -69,6 +79,7 @@ export function Features() {
             </div>
           </motion.div>
 
+          {/* ── Control Visual (2 slides) ── */}
           <motion.div
             custom={1}
             initial="hidden"
@@ -87,11 +98,39 @@ export function Features() {
               </p>
             </div>
             <div className="feature-card-phone">
-              <PhoneMockup glowColor="var(--color-brand-bright)" scale="0.9">
+              <PhoneSlide
+                maps={[VISUAL_CONTROL_IMAGES, VISUAL_CONTROL_IMAGES_2]}
+                alt="Control Visual"
+                glowColor="var(--color-brand-bright)"
+                scale="0.9"
+              />
+            </div>
+          </motion.div>
+
+          {/* ── Progreso Mundial ── */}
+          <motion.div
+            custom={2}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={cardVariants}
+            className="feature-card feature-card--side"
+          >
+            <div className="feature-card-content">
+              <div className="feature-icon" style={{ background: "color-mix(in srgb, var(--color-brand-dark) 15%, transparent)" }}>
+                <Globe className="w-6 h-6 text-brand-dark dark:text-brand-on-dark" />
+              </div>
+              <h3>Progreso Mundial</h3>
+              <p>
+                Visualiza tu avance con gráficas interactivas y un mapamundi que cobra vida conforme llenas tu álbum. Coleccionar nunca fue tan visual — y tan adictivo.
+              </p>
+            </div>
+            <div className="feature-card-phone">
+              <PhoneMockup glowColor="var(--color-brand-dark)" scale="0.9">
                 <div className="relative w-full h-full">
                   <ThemedImage
-                    map={VISUAL_CONTROL_IMAGES}
-                    alt="Visual Control"
+                    map={WORLD_PROGRESS_IMAGES}
+                    alt="Progreso Mundial"
                     className="object-cover"
                   />
                 </div>
@@ -99,8 +138,9 @@ export function Features() {
             </div>
           </motion.div>
 
+          {/* ── Filtros Inteligentes ── */}
           <motion.div
-            custom={2}
+            custom={3}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
@@ -118,8 +158,9 @@ export function Features() {
             </div>
           </motion.div>
 
+          {/* ── Estadísticas Detalladas (2 slides) ── */}
           <motion.div
-            custom={3}
+            custom={4}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
@@ -136,20 +177,18 @@ export function Features() {
               </p>
             </div>
             <div className="feature-card-phone">
-              <PhoneMockup glowColor="var(--color-mx-red)" scale="0.95">
-                <div className="relative w-full h-full">
-                  <ThemedImage
-                    map={CUSTOMIZATION_IMAGES}
-                    alt="Estadísticas Detalladas"
-                    className="object-cover"
-                  />
-                </div>
-              </PhoneMockup>
+              <PhoneSlide
+                maps={[CUSTOMIZATION_IMAGES, CUSTOMIZATION_IMAGES_2]}
+                alt="Estadísticas Detalladas"
+                glowColor="var(--color-mx-red)"
+                scale="0.95"
+              />
             </div>
           </motion.div>
 
+          {/* ── Calendario Oficial ── */}
           <motion.div
-            custom={4}
+            custom={5}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
