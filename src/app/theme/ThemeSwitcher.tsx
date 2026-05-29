@@ -3,7 +3,8 @@ import { Moon, Sun } from "lucide-react";
 import { useTheme } from "./ThemeContext";
 
 export function ThemeSwitcher() {
-  const { toggleMode } = useTheme();
+  const { mode, toggleMode } = useTheme();
+  const isDark = mode === "dark";
 
   return (
     <div className="relative">
@@ -11,29 +12,34 @@ export function ThemeSwitcher() {
         aria-hidden
         className="absolute inset-0 rounded-full pointer-events-none"
         style={{
-          backgroundColor: "var(--color-brand)",
-          filter: "blur(10px)",
+          boxShadow: "0 0 0 2px var(--color-brand), 0 0 12px 4px var(--color-brand)",
+          borderRadius: "9999px",
         }}
-        animate={{ scale: [1, 1.25, 1], opacity: [0.45, 0.75, 0.45] }}
+        animate={{ opacity: [0.5, 1, 0.5] }}
         transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
       />
       <button
         type="button"
         aria-label="Cambiar modo"
         onClick={toggleMode}
-        className="relative w-11 h-11 rounded-full border border-[var(--color-surface-border)] bg-[var(--color-surface)] hover:bg-[var(--color-surface-soft)] flex items-center justify-center overflow-hidden shadow-sm"
+        className="relative flex items-center gap-2 pl-1 pr-3 py-1 rounded-full border border-transparent bg-[var(--color-surface)] hover:bg-[var(--color-surface-soft)] shadow-sm transition-colors cursor-pointer"
       >
-        <div className="relative w-6 h-6">
-          <Sun
-            className="absolute inset-0 w-6 h-6 text-amber-500"
-            style={{ clipPath: "inset(0 50% 0 0)" }}
-          />
-          <Moon
-            className="absolute inset-0 w-6 h-6 text-indigo-500"
-            style={{ clipPath: "inset(0 0 0 50%)" }}
-          />
-          <span className="absolute top-0 bottom-0 left-1/2 w-px bg-[var(--color-surface-border)]" />
+        <div className="relative w-9 h-9 flex items-center justify-center flex-shrink-0">
+          <div className="relative w-6 h-6">
+            <Sun
+              className="absolute inset-0 w-6 h-6 text-amber-500"
+              style={{ clipPath: "inset(0 50% 0 0)" }}
+            />
+            <Moon
+              className="absolute inset-0 w-6 h-6 text-indigo-500"
+              style={{ clipPath: "inset(0 0 0 50%)" }}
+            />
+            <span className="absolute top-0 bottom-0 left-1/2 w-px bg-[var(--color-surface-border)]" />
+          </div>
         </div>
+        <span className="text-xs font-medium text-[var(--color-text-muted)] leading-tight whitespace-nowrap select-none">
+          {isDark ? "Modo oscuro" : "Modo claro"}
+        </span>
       </button>
     </div>
   );

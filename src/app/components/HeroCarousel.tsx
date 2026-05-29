@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 import { useTheme } from "../theme/ThemeContext";
 import { getHeroCarouselImages, HERO_CAROUSEL_COUNT } from "../theme/heroCarouselImages";
 
-const SECONDS_PER_CARD = 15;
+const SECONDS_PER_CARD = 4;
 
 export function HeroCarousel() {
   const { mode } = useTheme();

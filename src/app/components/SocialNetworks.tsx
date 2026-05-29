@@ -36,7 +36,7 @@ const SOCIAL_LINKS = [
 
 export function SocialNetworks() {
   return (
-    <section className="py-16 md:py-24 relative overflow-hidden bg-[var(--color-surface-soft)] border-y border-[var(--color-surface-border)]">
+    <section id="redes" className="py-16 md:py-24 relative overflow-hidden bg-[var(--color-surface-soft)] border-y border-[var(--color-surface-border)]">
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

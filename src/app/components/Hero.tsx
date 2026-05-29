@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ArrowRight, QrCode, Globe, Apple } from "lucide-react";
+import { ArrowRight, QrCode, Globe, Apple, Heart } from "lucide-react";
 import { WEB_APP_URL, IOS_APP_URL } from "../config";
 import { HeroCarousel } from "./HeroCarousel";
 
@@ -83,6 +83,13 @@ export function Hero() {
             <p className="text-xs font-medium text-[var(--color-text-muted)] sm:px-4 text-center sm:text-left opacity-80">
               * Puedes instalar la versión web como app (PWA) en tu dispositivo.
             </p>
+            <a
+              href="#redes"
+              className="w-full flex items-center justify-center gap-2 max-[420px]:gap-1.5 px-8 max-[420px]:px-4 py-4 max-[420px]:py-2.5 text-base max-[420px]:text-sm font-bold text-white bg-brand hover:bg-brand-bright rounded-full transition-all shadow-[0_0_25px_color-mix(in_srgb,var(--color-brand)_40%,transparent)]"
+            >
+              <Heart className="w-5 h-5 max-[420px]:w-4 max-[420px]:h-4" />
+              <span>Síguenos en redes</span>
+            </a>
           </div>
         </motion.div>
 
