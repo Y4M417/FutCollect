@@ -11,8 +11,14 @@ export function Navbar() {
   return (
     <nav className="relative bg-[var(--color-surface)]/80 backdrop-blur-md border-b border-[var(--color-surface-border)]">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-2.5">
-          <img src={logo} alt="FutCollect" className="w-9 h-9 object-contain" />
+        <a href="#top" className="flex items-center gap-3">
+          <motion.img
+            src={logo}
+            alt="FutCollect"
+            className="w-14 h-14 object-contain drop-shadow-[0_0_8px_color-mix(in_srgb,var(--color-brand)_70%,transparent)]"
+            animate={{ scale: [1, 1.08, 1] }}
+            transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+          />
           <span className="text-xl font-bold text-brand-dark dark:text-brand-on-dark tracking-tight">FutCollect</span>
         </a>
 
