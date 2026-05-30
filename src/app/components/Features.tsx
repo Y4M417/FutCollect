@@ -4,6 +4,7 @@ import { ThemedImage } from "../theme/ThemedImage";
 import { PhoneSlide } from "../theme/SlideImage";
 import { PhoneMockup } from "./PhoneMockup";
 import { CountrySelector } from "../theme/CountrySelector";
+import { useLang } from "../i18n/LanguageContext";
 import {
   QR_SWAP_IMAGES,
   VISUAL_CONTROL_IMAGES,
@@ -24,6 +25,7 @@ const cardVariants = {
 };
 
 export function Features() {
+  const { t } = useLang();
   return (
     <section id="caracteristicas" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-6">
@@ -35,10 +37,10 @@ export function Features() {
           className="text-center max-w-2xl mx-auto mb-10"
         >
           <h2 className="features-section-title">
-            Todo lo que necesitas para completar tu álbum
+            {t.features.title}
           </h2>
           <p className="features-section-subtitle mx-auto">
-            Olvídate de las listas de papel. Usa nuestras herramientas para saber exactamente qué tienes, qué te falta y cómo conseguirlo más rápido.
+            {t.features.subtitle}
           </p>
         </motion.div>
 
@@ -61,10 +63,8 @@ export function Features() {
               <div className="feature-icon" style={{ background: "color-mix(in srgb, var(--color-brand) 15%, transparent)" }}>
                 <RefreshCcw className="w-7 h-7 text-brand" />
               </div>
-              <h3>Intercambio Rápido por QR</h3>
-              <p>
-                Nuestra función estrella. Escanea el código de tu amigo y la app analizará ambas colecciones al instante. Te diremos exactamente qué intercambiar.
-              </p>
+              <h3>{t.features.qrSwap.title}</h3>
+              <p>{t.features.qrSwap.desc}</p>
             </div>
             <div className="feature-card-phone">
               <PhoneMockup glowColor="var(--color-brand)">
@@ -92,10 +92,8 @@ export function Features() {
               <div className="feature-icon" style={{ background: "color-mix(in srgb, var(--color-brand-bright) 15%, transparent)" }}>
                 <Smartphone className="w-6 h-6 text-brand-bright" />
               </div>
-              <h3>Control Visual</h3>
-              <p>
-                Navega por equipos, marca estampas con un toque y mantén un control de tu avance. Registrar tu progreso nunca ha sido tan fácil y profesional.
-              </p>
+              <h3>{t.features.visualControl.title}</h3>
+              <p>{t.features.visualControl.desc}</p>
             </div>
             <div className="feature-card-phone">
               <PhoneSlide
@@ -120,10 +118,8 @@ export function Features() {
               <div className="feature-icon" style={{ background: "color-mix(in srgb, var(--color-brand-dark) 15%, transparent)" }}>
                 <Globe className="w-6 h-6 text-brand-dark dark:text-brand-on-dark" />
               </div>
-              <h3>Progreso Mundial</h3>
-              <p>
-                Visualiza tu avance con gráficas interactivas y un mapamundi que cobra vida conforme llenas tu álbum. Coleccionar nunca fue tan visual — y tan adictivo.
-              </p>
+              <h3>{t.features.worldProgress.title}</h3>
+              <p>{t.features.worldProgress.desc}</p>
             </div>
             <div className="feature-card-phone">
               <PhoneMockup glowColor="var(--color-brand-dark)" scale="0.9">
@@ -151,10 +147,8 @@ export function Features() {
               <div className="feature-icon" style={{ background: "color-mix(in srgb, var(--color-mx-red) 15%, transparent)" }}>
                 <Filter className="w-6 h-6 text-mx-red" />
               </div>
-              <h3>Filtros Inteligentes</h3>
-              <p>
-                Obtén listas exactas de las estampas que te faltan y las que tienes repetidas. Filtra por grupo, equipo, o estado para encontrar lo que buscas al instante.
-              </p>
+              <h3>{t.features.smartFilters.title}</h3>
+              <p>{t.features.smartFilters.desc}</p>
             </div>
           </motion.div>
 
@@ -171,10 +165,8 @@ export function Features() {
               <div className="feature-icon" style={{ background: "color-mix(in srgb, var(--color-mx-red) 15%, transparent)" }}>
                 <PieChart className="w-6 h-6 text-mx-red" />
               </div>
-              <h3>Estadísticas Detalladas</h3>
-              <p>
-                Consulta tu progreso general, mantén registro de tus estampas faltantes y repetidas, y obtén información precisa de cómo avanza tu colección en cada grupo del álbum mundialista.
-              </p>
+              <h3>{t.features.stats.title}</h3>
+              <p>{t.features.stats.desc}</p>
             </div>
             <div className="feature-card-phone">
               <PhoneSlide
@@ -199,10 +191,8 @@ export function Features() {
               <div className="feature-icon" style={{ background: "color-mix(in srgb, var(--color-brand-dark) 15%, transparent)" }}>
                 <Calendar className="w-6 h-6 text-brand-dark dark:text-brand-on-dark" />
               </div>
-              <h3>Calendario Oficial</h3>
-              <p>
-                Sigue todos los partidos del mundial con horarios ajustados automáticamente a tu zona local. Nunca más te pierdas un juego — la app te muestra qué equipos juegan, a qué hora y en qué grupo.
-              </p>
+              <h3>{t.features.calendar.title}</h3>
+              <p>{t.features.calendar.desc}</p>
             </div>
             <div className="feature-card-phone">
               <PhoneMockup glowColor="var(--color-brand-dark)" scale="0.95">

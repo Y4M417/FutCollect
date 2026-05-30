@@ -7,6 +7,21 @@
   </head>
   <body>
     <div id="root"></div>
+    <script type="text/javascript">
+      // Decodifica la ruta reescrita por 404.html (fallback SPA de GitHub Pages).
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(null, "", l.pathname.slice(0, -1) + decoded + l.hash);
+        }
+      })(window.location);
+    </script>
     <script>
       window.addEventListener('error', (event) => {
         document.body.innerHTML += '<div style="color:red; z-index:9999; position:absolute; top:0; background:white; padding:20px;">ERROR: ' + event.message + '</div>';

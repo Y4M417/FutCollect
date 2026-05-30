@@ -1,8 +1,8 @@
-import { useState } from "react";
 import { Link } from "react-router";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { ThemeProvider } from "../theme/ThemeContext";
+import { LanguageProvider, useLang } from "../i18n/LanguageContext";
 
 type CollectItem = { bold: string; text: string };
 
@@ -207,7 +207,7 @@ function PolicySection({ content }: { content: Content }) {
 }
 
 function PrivacyContent() {
-  const [lang, setLang] = useState<"es" | "en">("es");
+  const { lang, t } = useLang();
   const content = lang === "es" ? ES_CONTENT : EN_CONTENT;
 
   return (
@@ -217,32 +217,10 @@ function PrivacyContent() {
         <div className="max-w-2xl w-full mb-10">
           <Link
             to="/"
-            className="text-sm text-text-muted hover:text-brand transition-colors mb-6 inline-block"
+            className="text-sm text-text-muted hover:text-brand transition-colors inline-block"
           >
-            ← Volver / Back
+            {t.common.back}
           </Link>
-          <div className="flex gap-2 mt-4">
-            <button
-              onClick={() => setLang("es")}
-              className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
-                lang === "es"
-                  ? "bg-brand text-white"
-                  : "bg-surface-soft text-text-muted hover:text-text-strong"
-              }`}
-            >
-              Español
-            </button>
-            <button
-              onClick={() => setLang("en")}
-              className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
-                lang === "en"
-                  ? "bg-brand text-white"
-                  : "bg-surface-soft text-text-muted hover:text-text-strong"
-              }`}
-            >
-              English
-            </button>
-          </div>
         </div>
 
         <PolicySection content={content} />
@@ -255,7 +233,9 @@ function PrivacyContent() {
 export function Privacy() {
   return (
     <ThemeProvider>
-      <PrivacyContent />
+      <LanguageProvider>
+        <PrivacyContent />
+      </LanguageProvider>
     </ThemeProvider>
   );
 }

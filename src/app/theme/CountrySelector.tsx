@@ -1,14 +1,16 @@
 import { useTheme } from "./ThemeContext";
 import type { Country } from "./ThemeContext";
+import { useLang } from "../i18n/LanguageContext";
 
-const COUNTRIES: { id: Country; label: string; flag: string }[] = [
-  { id: "mexico", label: "México", flag: "🇲🇽" },
-  { id: "usa", label: "USA", flag: "🇺🇸" },
-  { id: "canada", label: "Canadá", flag: "🇨🇦" },
+const COUNTRIES: { id: Country; labelKey: "mexico" | "usa" | "canada"; flag: string }[] = [
+  { id: "mexico", labelKey: "mexico", flag: "🇲🇽" },
+  { id: "usa", labelKey: "usa", flag: "🇺🇸" },
+  { id: "canada", labelKey: "canada", flag: "🇨🇦" },
 ];
 
 export function CountrySelector() {
   const { country, setCountry } = useTheme();
+  const { t } = useLang();
 
   return (
     <div className="flex items-center justify-center gap-3 flex-wrap">
@@ -24,7 +26,7 @@ export function CountrySelector() {
           }`}
         >
           <span className="text-base leading-none">{c.flag}</span>
-          <span>{c.label}</span>
+          <span>{t.country[c.labelKey]}</span>
         </button>
       ))}
     </div>

@@ -1,33 +1,7 @@
 import { AnimatePresence, motion } from "motion/react";
 import { HelpCircle, Plus } from "lucide-react";
 import { useState } from "react";
-
-const FAQS: { q: string; a: string }[] = [
-  {
-    q: "¿Para qué sirve FutCollect?",
-    a: "FutCollect es tu álbum digital del Mundial: registra las estampas que tienes, descubre cuáles te faltan o tienes repetidas, y encuentra intercambios con otros coleccionistas escaneando un código QR. Todo desde tu celular, sin hojas de papel.",
-  },
-  {
-    q: "¿Necesito internet para usar la app?",
-    a: "Solo necesitas internet para descargar la app y para actualizar los resultados de los partidos. Para registrar y editar tus estampas, así como para hacer el Intercambio por QR, no necesitas conexión a internet.",
-  },
-  {
-    q: "¿En qué dispositivos estará disponible?",
-    a: "FutCollect llegará a iOS y Android. La primera versión saldrá en iOS y, poco después, lanzaremos la versión para Android. Suscríbete con tu correo para enterarte el día exacto del lanzamiento.",
-  },
-  {
-    q: "¿Cuánto cuesta la aplicación?",
-    a: "La descarga y las funciones principales (registrar tu colección, ver faltantes, intercambiar por QR) son completamente gratuitas. Dentro de la app habrá compras integradas opcionales, pero podrás seguir utilizando todas las características básicas sin pagar nada.",
-  },
-  {
-    q: "¿Cómo funciona el Intercambio por QR?",
-    a: "Cada usuario tiene un QR personal con su lista de repetidas y faltantes. Al escanearse mutuamente, la app cruza ambas colecciones y te muestra exactamente qué estampas pueden cambiar entre ustedes. Más arriba en esta página aparecen los 3 pasos.",
-  },
-  {
-    q: "¿Cómo registro una estampa?",
-    a: "¡Es muy fácil! En la sección de 'Mi Álbum', selecciona el equipo y simplemente toca el número de la estampa. Un toque para indicar que la tienes, dos toques si la tienes repetida. ¡Así de rápido y sencillo!",
-  },
-];
+import { useLang } from "../i18n/LanguageContext";
 
 function Item({ q, a, open, onToggle }: { q: string; a: string; open: boolean; onToggle: () => void }) {
   return (
@@ -66,6 +40,7 @@ function Item({ q, a, open, onToggle }: { q: string; a: string; open: boolean; o
 }
 
 export function FAQ() {
+  const { t } = useLang();
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
@@ -80,14 +55,14 @@ export function FAQ() {
         >
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand/10 border border-brand/30 mb-4">
             <HelpCircle className="w-4 h-4 text-brand" />
-            <span className="text-xs font-semibold text-brand-dark dark:text-brand-on-dark tracking-wide uppercase">Preguntas frecuentes</span>
+            <span className="text-xs font-semibold text-brand-dark dark:text-brand-on-dark tracking-wide uppercase">{t.faq.badge}</span>
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-[var(--color-text-strong)] tracking-tight">¿Tienes dudas?</h2>
-          <p className="mt-4 text-[var(--color-text-muted)] text-lg">Las preguntas que más nos hacen sobre FutCollect.</p>
+          <h2 className="text-3xl md:text-5xl font-bold text-[var(--color-text-strong)] tracking-tight">{t.faq.title}</h2>
+          <p className="mt-4 text-[var(--color-text-muted)] text-lg">{t.faq.subtitle}</p>
         </motion.div>
 
         <div className="flex flex-col gap-3">
-          {FAQS.map((item, i) => (
+          {t.faq.items.map((item, i) => (
             <Item
               key={item.q}
               q={item.q}

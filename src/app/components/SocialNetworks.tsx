@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Users } from "lucide-react";
+import { useLang } from "../i18n/LanguageContext";
 
 const SOCIAL_LINKS = [
   {
@@ -35,6 +36,7 @@ const SOCIAL_LINKS = [
 ];
 
 export function SocialNetworks() {
+  const { t } = useLang();
   return (
     <section id="redes" className="py-16 md:py-24 relative overflow-hidden bg-[var(--color-surface-soft)] border-y border-[var(--color-surface-border)]">
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
@@ -46,11 +48,11 @@ export function SocialNetworks() {
         >
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand/10 border border-brand/30 mb-4">
             <Users className="w-4 h-4 text-brand" />
-            <span className="text-xs font-semibold text-brand-dark dark:text-brand-on-dark tracking-wide uppercase">Comunidad</span>
+            <span className="text-xs font-semibold text-brand-dark dark:text-brand-on-dark tracking-wide uppercase">{t.social.badge}</span>
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-[var(--color-text-strong)] tracking-tight">Síguenos en nuestras redes</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-[var(--color-text-strong)] tracking-tight">{t.social.title}</h2>
           <p className="mt-4 text-[var(--color-text-muted)] text-lg mb-10">
-            Mantente al tanto de los próximos lanzamientos, actualizaciones y nuevas dinámicas uniéndote a nuestra comunidad.
+            {t.social.subtitle}
           </p>
         </motion.div>
 

@@ -9,6 +9,7 @@ import { SocialNetworks } from "../components/SocialNetworks";
 import { Waitlist } from "../components/Waitlist";
 import { Footer } from "../components/Footer";
 import { ThemeProvider } from "../theme/ThemeContext";
+import { LanguageProvider } from "../i18n/LanguageContext";
 
 
 function ScrollToTopButton() {
@@ -56,21 +57,23 @@ function ScrollToTopButton() {
 export function Home() {
   return (
     <ThemeProvider>
-      <div className="min-h-screen font-sans selection:bg-brand/30 selection:text-brand-dark">
-        <div className="fixed top-0 left-0 right-0 z-50">
-          <Navbar />
+      <LanguageProvider>
+        <div className="min-h-screen font-sans selection:bg-brand/30 selection:text-brand-dark">
+          <div className="fixed top-0 left-0 right-0 z-50">
+            <Navbar />
+          </div>
+          <main>
+            <Hero />
+            <Features />
+            <QRExchange />
+            <FAQ />
+            <SocialNetworks />
+            <Waitlist />
+          </main>
+          <Footer />
+          <ScrollToTopButton />
         </div>
-        <main>
-          <Hero />
-          <Features />
-          <QRExchange />
-          <FAQ />
-          <SocialNetworks />
-          <Waitlist />
-        </main>
-        <Footer />
-        <ScrollToTopButton />
-      </div>
+      </LanguageProvider>
     </ThemeProvider>
   );
 }

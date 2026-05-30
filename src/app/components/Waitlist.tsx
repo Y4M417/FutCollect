@@ -1,8 +1,10 @@
 import { motion } from "motion/react";
 import { Bell, ArrowRight } from "lucide-react";
 import { GOOGLE_FORM_URL } from "../config";
+import { useLang } from "../i18n/LanguageContext";
 
 export function Waitlist() {
+  const { t } = useLang();
   return (
     <section className="py-24 relative overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl pointer-events-none">
@@ -24,9 +26,9 @@ export function Waitlist() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-6xl font-bold text-[var(--color-text-strong)] mb-6 tracking-tight">¿Listo para llenar tu álbum?</h2>
+          <h2 className="text-4xl md:text-6xl font-bold text-[var(--color-text-strong)] mb-6 tracking-tight">{t.waitlist.title}</h2>
           <p className="text-xl text-[var(--color-text-muted)] mb-10 max-w-2xl mx-auto">
-            Únete a la comunidad de coleccionistas para este mundial. Sé de los primeros en probar en su lanzamiento FutCollect.
+            {t.waitlist.subtitle}
           </p>
 
           <motion.a
@@ -39,11 +41,11 @@ export function Waitlist() {
             className="group inline-flex items-center justify-center gap-3 px-10 md:px-14 py-5 md:py-6 text-lg md:text-xl font-extrabold text-white bg-brand hover:bg-brand-bright rounded-full shadow-[0_0_40px_color-mix(in_srgb,var(--color-brand)_45%,transparent)]"
           >
             <Bell className="w-6 h-6 transition-transform duration-500 group-hover:rotate-12" />
-            <span>Unirme a la lista</span>
+            <span>{t.waitlist.cta}</span>
             <ArrowRight className="w-6 h-6 transition-transform duration-300 group-hover:translate-x-1" />
           </motion.a>
 
-          <p className="mt-6 text-sm text-[var(--color-text-muted)]">Disponible próximamente · Primero en iOS, después en Android.</p>
+          <p className="mt-6 text-sm text-[var(--color-text-muted)]">{t.waitlist.note}</p>
         </motion.div>
       </div>
     </section>
