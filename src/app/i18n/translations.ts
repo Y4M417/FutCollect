@@ -10,7 +10,6 @@ const es = {
     features: "Características",
     qrExchange: "Intercambio QR",
     news: "Noticias",
-    webVersion: "Versión Web",
     menu: "Menú",
   },
   hero: {
@@ -19,10 +18,9 @@ const es = {
     titleB: "en tu bolsillo.",
     subtitle:
       "Registra tus estampas, descubre cuáles te faltan y encuentra el intercambio perfecto con tus amigos en segundos usando tecnología QR. Sin hojas de papel, sin complicaciones.",
-    webCta: "Ve a la versión web",
+    androidCta: "Descárgala en Android",
     iosCta: "Ve a la app en iOS",
     howQr: "Cómo funciona el QR",
-    pwaNote: "* Puedes instalar la versión web como app (PWA) en tu dispositivo.",
     followUs: "Síguenos en redes",
   },
   features: {
@@ -166,7 +164,6 @@ const en: Copy = {
     features: "Features",
     qrExchange: "QR Swap",
     news: "News",
-    webVersion: "Web Version",
     menu: "Menu",
   },
   hero: {
@@ -175,10 +172,9 @@ const en: Copy = {
     titleB: "right in your pocket.",
     subtitle:
       "Track your stickers, find out which ones you're missing, and find the perfect swap with your friends in seconds using QR technology. No paper checklists, no hassle.",
-    webCta: "Go to the web version",
+    androidCta: "Get it on Android",
     iosCta: "Get the iOS app",
     howQr: "How QR works",
-    pwaNote: "* You can install the web version as an app (PWA) on your device.",
     followUs: "Follow us on social",
   },
   features: {

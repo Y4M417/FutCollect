@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
-import { ArrowRight, QrCode, Globe, Apple, Heart } from "lucide-react";
-import { WEB_APP_URL, IOS_APP_URL } from "../config";
+import { ArrowRight, QrCode, Apple, Heart } from "lucide-react";
+import { ANDROID_APP_URL, IOS_APP_URL } from "../config";
 import { HeroCarousel } from "./HeroCarousel";
 import { useLang } from "../i18n/LanguageContext";
 
@@ -53,13 +53,15 @@ export function Hero() {
           <div className="flex flex-col gap-3 max-[420px]:gap-2 mt-4 max-[420px]:mt-2">
             <div className="flex flex-col sm:flex-row gap-4 max-[420px]:gap-2">
               <a
-                href={WEB_APP_URL}
+                href={ANDROID_APP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 flex items-center justify-center gap-2 max-[420px]:gap-1.5 px-6 max-[420px]:px-4 py-4 max-[420px]:py-2.5 text-base max-[420px]:text-sm font-bold text-white bg-brand hover:bg-brand-bright rounded-full transition-all shadow-[0_0_25px_color-mix(in_srgb,var(--color-brand)_40%,transparent)]"
               >
-                <Globe className="w-5 h-5 max-[420px]:w-4 max-[420px]:h-4" />
-                <span>{t.hero.webCta}</span>
+                <svg viewBox="0 0 24 24" className="w-5 h-5 max-[420px]:w-4 max-[420px]:h-4" fill="currentColor" aria-hidden>
+                  <path d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5S11 23.33 11 22.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10zm-2.5-10C2.67 8 2 8.67 2 9.5v7c0 .83.67 1.5 1.5 1.5S5 17.33 5 16.5v-7C5 8.67 4.33 8 3.5 8zm17 0c-.83 0-1.5.67-1.5 1.5v7c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-7c0-.83-.67-1.5-1.5-1.5zM15.53 2.16l1.3-1.3c.2-.2.2-.51 0-.71-.2-.2-.51-.2-.71 0l-1.48 1.48A5.84 5.84 0 0 0 12 1c-.96 0-1.86.23-2.66.63L7.85.16c-.2-.2-.51-.2-.71 0-.2.2-.2.51 0 .71l1.31 1.31A5.983 5.983 0 0 0 6 7h12a5.99 5.99 0 0 0-2.47-4.84zM10 5H9V4h1v1zm5 0h-1V4h1v1z"/>
+                </svg>
+                <span>{t.hero.androidCta}</span>
                 <ArrowRight className="w-5 h-5 max-[420px]:w-4 max-[420px]:h-4" />
               </a>
               <motion.a
@@ -82,9 +84,6 @@ export function Hero() {
               <QrCode className="w-5 h-5 max-[420px]:w-4 max-[420px]:h-4 text-brand" />
               <span>{t.hero.howQr}</span>
             </a>
-            <p className="text-xs font-medium text-[var(--color-text-muted)] sm:px-4 text-center sm:text-left opacity-80">
-              {t.hero.pwaNote}
-            </p>
             <a
               href="#redes"
               className="w-full flex items-center justify-center gap-2 max-[420px]:gap-1.5 px-8 max-[420px]:px-4 py-4 max-[420px]:py-2.5 text-base max-[420px]:text-sm font-bold text-white bg-brand hover:bg-brand-bright rounded-full transition-all shadow-[0_0_25px_color-mix(in_srgb,var(--color-brand)_40%,transparent)]"
